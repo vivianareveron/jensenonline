@@ -78,6 +78,13 @@ try{
                 $_SESSION['lastname'] = $user['lastname'];
                 $_SESSION['title'] = $user['title'];
                 $_SESSION['class'] = $user['class'];
+                $_SESSION['address'] = $user['address'];
+                $_SESSION['postnumber'] = $user['postnumber'];
+                $_SESSION['postaddress'] = $user['postaddress'];
+                $_SESSION['phone'] = $user['phone'];
+                $_SESSION['mobile'] = $user['mobile'];
+                $_SESSION['workphone'] = $user['workphone'];
+                $_SESSION['skype'] = $user['skype'];
                 $_SESSION['id'] = $user['id']; //till nästa sida som är frontpage.php
                 header("Location: frontpage.php");
         }else {
