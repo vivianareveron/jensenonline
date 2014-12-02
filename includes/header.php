@@ -9,7 +9,7 @@
                             class="icon-cog"></i> Konto <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Settings</a></li>
-              <li><a href="../jensenonline/profile.php">Profil</a></li>
+              <li><a href="../jensenonline/one.php">Profil</a></li>
             </ul>
           </li>
           <li><a href="../jensenonline/logout.php" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Logga ut <b class="caret"></b></a>
