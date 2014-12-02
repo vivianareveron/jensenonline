@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <title>Jensen Online 2.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -27,10 +28,37 @@
     <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+=======
+   <meta charset="utf-8">
+<title>Jensen Online 2.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/minprofil.css" rel="stylesheet">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+>>>>>>> 7e42d8ee9e7b4be23f98cdfc22097f87c0ea506a
 </head>
 <body>
 
+<<<<<<< HEAD
     <h2>Min profil</h2>
+=======
+<?php
+include("includes/header.php");
+?>
+    <div class="main">
+    <div class="account-container">
+        <div class="content clearfix">
+        <h1>Min profil</h1>
+>>>>>>> 7e42d8ee9e7b4be23f98cdfc22097f87c0ea506a
     <p>Här kan du ändra dina uppgifter</p>
 
 <?php
@@ -146,49 +174,49 @@
     
     
     <form action="one.php" method="POST" >
-        <table>
-            <tr>
+        <table >
+            <tr class= "login-fields">
                 <td>Förnamn: </td>
-                <td><input type="text" readonly="" name="firstname" value=<?php echo $firstname;?> /></td>
+                <td class="field"><input type="text" readonly="" name="firstname" class="login username-field" id="username" value=<?php echo $firstname;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Efternamn: </td>
-                <td><input type="text" readonly="" name="lastname" value=<?php echo $lastname;?> /></td>
+                <td class="field"><input type="text" readonly="" name="lastname" class="login username-field" id="username"value=<?php echo $lastname;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Adress: </td>
-                <td><input type="text" name="address" value=<?php echo $address;?> /></td>
+                <td class="field"><input type="text" name="address" class="login username-field" id="username" value=<?php echo $address;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Postnummer: </td>
-                <td><input type="text" name="postnumber" value=<?php echo $postnumber;?> /></td>
+                <td class="field"><input type="text" name="postnumber" class="login username-field" id="username" value=<?php echo $postnumber;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Postadress: </td>
-                <td><input type="text" name="postaddress" value=<?php echo $postaddress;?> /></td>
+                <td class="field"><input type="text" name="postaddress" class="login username-field" id="username" value=<?php echo $postaddress;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>E-post: </td>
-                <td><input type="text" name="email" value=<?php echo $email;?> /></td>
+                <td class="field"><input type="text" name="email" class="login username-field" id="username" value=<?php echo $email;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Hemtelefon: </td>
-                <td><input type="text" name="phone" value=<?php echo $phone;?> /></td>
+                <td class="field"><input type="text" name="phone" class="login username-field" id="username"value=<?php echo $phone;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Mobil: </td>
-                <td><input type="text" name="mobile" value=<?php echo $mobile;?> /></td>
+                <td class="field"><input type="text" name="mobile" class="login username-field" id="username" value=<?php echo $mobile;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Arbetstelefon: </td>
-                <td><input type="text" name="workphone" value=<?php echo $workphone;?> /></td>
+                <td class="field"><input type="text" name="workphone" class="login username-field" id="username" value=<?php echo $workphone;?> /></td>
             </tr>
-            <tr>
+            <tr class= "login-fields">
                 <td>Skype: </td>
-                <td><input type="text" name="skype" value=<?php echo $skype;?> /></td>
+                <td class="field"><input type="text" name="skype" class="login username-field" id="username" value=<?php echo $skype;?> /></td>
             </tr>
             <tr>
-                <td><input type="submit" name="update" value="Uppdatera" /></td>
+                <td class="login-actions"><input type="submit" name="update" value="Uppdatera" class="button btn btn-success btn-large" /></td>
             </tr>
         </table>
     
@@ -214,9 +242,23 @@
      </form>
 <br />
 <br />
+        <div class="login-extra">
 <a href="frontpage.php">Back to start page</a>
-    
-    
+            </div> <!-- class login-extra -->
+    </div> <!-- class content clearfix -->
+ </div> <!--class container --> 
+</div> <!-- class main-->
+<?php
+include("includes/footer.php");
+?>    
+
+<script src="js/jquery-1.7.2.min.js"></script> 
+<script src="js/excanvas.min.js"></script> 
+<script src="js/chart.min.js" type="text/javascript"></script> 
+<script src="js/bootstrap.js"></script>
+
+ 
+<script src="js/base.js"></script> 
     
 </body>
 </html>

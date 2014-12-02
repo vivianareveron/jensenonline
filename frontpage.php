@@ -64,7 +64,7 @@ $title = $_SESSION['title'];
         <div class="span9">
     
           <div class="widget widget-nopad">
-            <div class="widget-header"> <i class="icon-list-alt"></i>
+            <div class="widget-header"> <i class="icon-calendar"></i>
               <h3>Kalender</h3>
             </div>
             <!-- /widget-header -->
@@ -87,22 +87,22 @@ $title = $_SESSION['title'];
            
                 <div class="shortcuts">
                     <div> 
-                        <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Apps</span> </a>
+                        <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Mina kurser</span> </a>
                     </div>
                     <div>    
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-bookmark"></i><span class="shortcut-label">Bookmarks</span> </a>
+                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-envelope"></i><span class="shortcut-label">Meddelanden</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Reports</span> </a>
+                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Min klass</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Comments</span> </a>
+                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-upload"></i><span class="shortcut-label">Mina uppgifter</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i><span class="shortcut-label">Users</span> </a>
+                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-ok-sign "></i><span class="shortcut-label">Anmäl frånvaro</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-file"></i><span class="shortcut-label">Notes</span> </a>
+                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Chat</span> </a>
                     </div>
                  
             </div>
@@ -119,7 +119,7 @@ $title = $_SESSION['title'];
         <div class="row">
         <div class="span6">  
         <div class="widget widget-table action-table">
-            <div class="widget-header"> <i class="icon-th-list"></i>
+            <div class="widget-header"> <i class="icon-folder-open"></i>
               <h3>Most Recent Uploads</h3>
             </div>
             <!-- /widget-header -->
@@ -169,8 +169,8 @@ $title = $_SESSION['title'];
          <!-- /span6-->
         <div class="span6">     
             <div class="widget widget-nopad">
-            <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3>Nyheter</h3>
+            <div class="widget-header"> <i class="icon-envelope"></i>
+              <h3>Meddelanden</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
@@ -212,8 +212,8 @@ $title = $_SESSION['title'];
           <div class="row"> 
           <div class="span12">
           <div class="widget">
-            <div class="widget-header"> <i class="icon-file"></i>
-              <h3>Forum, Chat, email?</h3>
+            <div class="widget-header"> <i class="icon-comment"></i>
+              <h3>Chat</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
