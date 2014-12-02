@@ -6,13 +6,10 @@
         <div class="nav-collapse">
         <ul class="nav pull-right">
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Konto <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:;">Settings</a></li>
-              <li><a href="../jensenonline/one.php">Profil</a></li>
-            </ul>
+                            class="icon-user"></i> Min Profil <b class="caret"></b></a>
+            
           </li>
-          <li><a href="../jensenonline/logout.php" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Logga ut <b class="caret"></b></a>
+          <li><a href="../jensenonline/logout.php" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-signout"></i> Logga ut <b class="caret"></b></a>
           </li>
         </ul>
         <form class="navbar-search pull-right">
@@ -31,11 +28,12 @@
     <div class="container">
       <ul class="mainnav">
         <li class="active"><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <li><a href="reports.html"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-        <li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li>
-        <li><a href="charts.html"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
-        <li><a href="shortcodes.html"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
-        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
+        <li><a href="reports.html"><i class="icon-list-alt"></i><span>Mina kurser</span> </a> </li>
+        <li><a href="guidely.html"><i class="icon-envelope"></i><span>Meddelanden</span> </a></li>
+        <li><a href="charts.html"><i class="icon-group"></i><span>Min klass</span> </a> </li>
+        <li><a href="shortcodes.html"><i class="icon-upload"></i><span>Mina uppgifter</span> </a> </li>
+        <li><a href="shortcodes.html"><i class="icon-comment"></i><span>Chat</span> </a> </li>  
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-ok-sign"></i><span>Frånvaro</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="icons.html">Icons</a></li>
             <li><a href="faq.html">FAQ</a></li>
@@ -45,6 +43,7 @@
             <li><a href="error.html">404</a></li>
           </ul>
         </li>
+        
       </ul>
     </div>
     <!-- /container --> 
