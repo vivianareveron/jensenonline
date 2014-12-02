@@ -134,7 +134,7 @@ if(isset($_GET["deleted"])) {
          
          
             <tr class="login-fields" >
-                <td class="field"><input type="text" name="password" class="login password-field" placeholder="Lösenord" id="pasword"/></td>
+                <td class="field"><input type="password" name="password" class="login password-field" placeholder="Lösenord" id="pasword"/></td>
             </tr>
         
             <tr >

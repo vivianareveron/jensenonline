@@ -31,31 +31,52 @@
 
 <body>
 
-        <h1>Sida ett - mina uppgifter</h1>
+        <h1>Min profil</h1>
+    <p>Här kan du ändra dina uppgifter</p>
 
 <?php
 
+$firstname = $_SESSION['firstname'];
+$lastname = $_SESSION['lastname'];
+$address = $_SESSION['address'];
 $postnumber = $_SESSION['postnumber'];
 $postaddress = $_SESSION['postaddress'];
+$email = $_SESSION['email'];
+$phone = $_SESSION['phone'];
+$mobile = $_SESSION['mobile'];
+$workphone = $_SESSION['workphone'];
+$skype = $_SESSION['skype'];
+
 
 
 if(isset($_POST["update"])) {
     
-$postnumber = $_POST['postnumber'];
-$postaddress = $_POST['postaddress'];
+    $address = $_POST['address'];
+    $postnumber = $_POST['postnumber'];
+    $postaddress = $_POST['postaddress'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $mobile = $_POST['mobile'];
+    $workphone = $_POST['workphone'];
+    $skype = $_POST['skype'];
 
 try{
     require_once("db_connect.php"); 
         $query = "UPDATE users ";
-        $query .= "SET postnumber = :postnumber ";
-        $query .= "SET postaddress = :postaddress ";
+        $query .= "SET address = :address, postnumber = :postnumber, postaddress = :postaddress, email = :email, phone = :phone, mobile = :mobile, workphone = :workphone, skype = :skype ";
         $query .= "WHERE id = :id"; 
 
         $ps = $db->prepare($query); 
         $result = $ps->execute(
             array (
+                'address'=>$address,
                 'postnumber'=>$postnumber, 
                 'postaddress'=>$postaddress,
+                'email'=>$email,
+                'phone'=>$phone,
+                'mobile'=>$mobile,
+                'workphone'=>$workphone,
+                'skype'=>$skype,
                 'id'=>$_SESSION['id']
                 ));
     
@@ -77,19 +98,47 @@ try{
     <form action="one.php" method="POST" >
         <table>
             <tr>
-                <td>Postnumber: </td>
+                <td>Förnamn: </td>
+                <td><input type="text" readonly="" name="firstname" value=<?php echo $firstname;?> /></td>
+            </tr>
+            <tr>
+                <td>Efternamn: </td>
+                <td><input type="text" readonly="" name="lastname" value=<?php echo $lastname;?> /></td>
+            </tr>
+            <tr>
+                <td>Adress: </td>
+                <td><input type="text" name="address" value=<?php echo $address;?> /></td>
+            </tr>
+            <tr>
+                <td>Postnummer: </td>
                 <td><input type="text" name="postnumber" value=<?php echo $postnumber;?> /></td>
             </tr>
             <tr>
-                <td>Postaddress: </td>
+                <td>Postadress: </td>
                 <td><input type="text" name="postaddress" value=<?php echo $postaddress;?> /></td>
             </tr>
             <tr>
-                <td>Password: </td>
-                <td><input type="text" name="password" /></td>
+                <td>E-post: </td>
+                <td><input type="text" name="email" value=<?php echo $email;?> /></td>
             </tr>
             <tr>
-                <td><input type="submit" name="update" value="Update" /></td>
+                <td>Hemtelefon: </td>
+                <td><input type="text" name="phone" value=<?php echo $phone;?> /></td>
+            </tr>
+            <tr>
+                <td>Mobil: </td>
+                <td><input type="text" name="mobile" value=<?php echo $mobile;?> /></td>
+            </tr>
+            <tr>
+                <td>Arbetstelefon: </td>
+                <td><input type="text" name="workphone" value=<?php echo $workphone;?> /></td>
+            </tr>
+            <tr>
+                <td>Skype: </td>
+                <td><input type="text" name="skype" value=<?php echo $skype;?> /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="update" value="Uppdatera" /></td>
             </tr>
         </table>
     
