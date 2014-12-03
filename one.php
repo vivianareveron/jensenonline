@@ -12,23 +12,7 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-<<<<<<< HEAD
-    <meta charset="utf-8">
-    <title>Jensen Online 2.0</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-            rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/pages/dashboard.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-=======
+
    <meta charset="utf-8">
 <title>Jensen Online 2.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -44,13 +28,6 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
->>>>>>> 7e42d8ee9e7b4be23f98cdfc22097f87c0ea506a
-</head>
-<body>
-
-<<<<<<< HEAD
-    <h2>Min profil</h2>
-=======
 <?php
 include("includes/header.php");
 ?>
@@ -58,7 +35,6 @@ include("includes/header.php");
     <div class="account-container">
         <div class="content clearfix">
         <h1>Min profil</h1>
->>>>>>> 7e42d8ee9e7b4be23f98cdfc22097f87c0ea506a
     <p>Här kan du ändra dina uppgifter</p>
 
 <?php
