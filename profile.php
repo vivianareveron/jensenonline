@@ -14,7 +14,7 @@
 <head>
 
    <meta charset="utf-8">
-<title>Jensen Online 2.0</title>
+<Title><?php echo $pageTitle; ?></Title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,11 @@
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+</head>
+
+<body>
+
+<!-- Header --> 
 <?php
 include("includes/header.php");
 ?>
@@ -224,17 +229,19 @@ include("includes/header.php");
     </div> <!-- class content clearfix -->
  </div> <!--class container --> 
 </div> <!-- class main-->
+    
+  
+<!-- Footer -->    
 <?php
 include("includes/footer.php");
-?>    
+?>
 
+
+<!-- ================================================== --> 
+<!-- Scripts --> 
 <script src="js/jquery-1.7.2.min.js"></script> 
 <script src="js/excanvas.min.js"></script> 
 <script src="js/chart.min.js" type="text/javascript"></script> 
 <script src="js/bootstrap.js"></script>
-
- 
 <script src="js/base.js"></script> 
-    
-</body>
-</html>
+  

@@ -106,6 +106,7 @@ if(isset($_GET["deleted"])) {
 
 ?>
 
+
  <div class="account-container">
       <div class="content clearfix">
     
@@ -149,9 +150,29 @@ if(isset($_GET["deleted"])) {
       </div> <!-- content clearfix -->
     </div> <!-- /account-container -->   
 
+
+    
+    
+<div class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span12"> &copy; 2014 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <!-- /span12 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /footer-inner --> 
+</div>
+<!-- /footer --> 
+
+
+    
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/signin.js"></script>
 
-</body>
+</body>       
 </html>

@@ -249,3 +249,18 @@ label {
     float: left;
     
 }
+
+.footer, .footer-inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+
+}
+
+.content .clearfix {
+    border: none;
+}
+
+

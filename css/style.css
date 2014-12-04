@@ -8,10 +8,12 @@ Bootstrap Admin Template by EGrappler.com
 [1. Global]
 */
 
-body {
-	background: #dce2ed;
-	font: 13px/1.7em 'Open Sans';
+body{ 
+    background: url(../img/body-bg.png); 
+    color:#236491; 
+    font: 13px/1.7em 'Open Sans';
 }
+
     
 p { 
 	font: 13px/1.7em 'Open Sans'; 	
@@ -266,7 +268,6 @@ border-color: #236491;
 .main {
 	padding-bottom: 2em;
 	
-	border-bottom: 1px solid #000;
 }
 
 
@@ -277,8 +278,8 @@ border-color: #236491;
 
 .extra {
 
-	border-top: 1px solid #585858;
-	border-bottom: 1px solid #000;
+	border-top: 1px solid #236491;
+	border-bottom: 1px solid #236491;
 
 }
 
@@ -288,11 +289,11 @@ border-color: #236491;
 	font-size: 11px;
 	color: #BBB;
 	
-	background: #1A1A1A;
+	background:#236491;
 }
 
 .extra a {
-	color: #666;
+	color: #999;
 }
 
 .extra h4 {
@@ -319,17 +320,18 @@ border-color: #236491;
 [6. Footer/ .footer]
 */
 
+
 .footer {
 	margin-top: 0;
-	
-	border-top: 1px solid #292929;
+	border-top: 1px solid #236491;
+    
 }
 
 .footer-inner {
 	padding: 15px 0;
 	
 	font-size: 12px;
-	background: #111;
+	background: #236491;
 	color: #999;
 }
 
@@ -413,8 +415,6 @@ border-color: #236491;
 			
 			
 		}
-
-
 
 
 .widget-content {
@@ -1240,10 +1240,12 @@ color: #333;
 	.footer {
 		margin-right: -20px;
 		margin-left: -20px;
+        
 	}
 	
 	.footer .container {
 		padding: 0 20px;
+        
 	}
 	
 	.footer .footer-terms {

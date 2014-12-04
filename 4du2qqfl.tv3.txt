@@ -1,0 +1,14 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   css/pages/minprofil.css
+#	modified:   frontpage.php
+#	modified:   includes/header.php
+#	modified:   login.php
+#	modified:   one.php
+#
+Added a css for the profile (one.php) page and changed the icons in the modified pages

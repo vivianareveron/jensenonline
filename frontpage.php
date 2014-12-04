@@ -8,13 +8,15 @@
         header("Location: login.php");
     }  
 
+    $pageTitle = "Dashboard";
+    $section = "dashboard";
 ?>
 
 <!DOCTYPE html>
 <html lang="">
 <head>
    <meta charset="utf-8">
-<title>Jensen Online 2.0</title>
+<Title><?php echo $pageTitle; ?></Title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -88,22 +90,22 @@ $title = $_SESSION['title'];
            
                 <div class="shortcuts">
                     <div> 
-                        <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Mina kurser</span> </a>
+                        <a href="minakurser.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Mina kurser</span> </a>
                     </div>
                     <div>    
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-envelope"></i><span class="shortcut-label">Meddelanden</span> </a>
+                    <a href="meddelanden.php" class="shortcut"><i class="shortcut-icon icon-envelope"></i><span class="shortcut-label">Meddelanden</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Min klass</span> </a>
+                    <a href="minklass.php" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Min klass</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-upload"></i><span class="shortcut-label">Mina uppgifter</span> </a>
+                    <a href="minauppgifter.php" class="shortcut"><i class="shortcut-icon icon-upload"></i><span class="shortcut-label">Mina uppgifter</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-ok-sign "></i><span class="shortcut-label">Anmäl frånvaro</span> </a>
+                    <a href="franvaro.php" class="shortcut"><i class="shortcut-icon icon-ok-sign "></i><span class="shortcut-label">Anmäl frånvaro</span> </a>
                     </div>
                     <div>
-                    <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Chat</span> </a>
+                    <a href="chat.php" class="shortcut"><i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Chat</span> </a>
                     </div>
                  
             </div>
