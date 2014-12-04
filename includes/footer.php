@@ -67,3 +67,6 @@
   <!-- /footer-inner --> 
 </div>
 <!-- /footer --> 
+
+</body>
+</html>

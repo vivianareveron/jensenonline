@@ -5,10 +5,10 @@
       
         <div class="nav-collapse">
         <ul class="nav pull-right">
-          <li ><a href="one.php" ><i class="icon-user"></i> Min Profil <b class="caret"></b></a>
+          <li ><a href="one.php" ><i class="icon-user"></i> Min Profil </a>
             
           </li>
-          <li><a href="logout.php" ><i class="icon-signout"></i> Logga ut <b class="caret"></b></a>
+          <li><a href="logout.php" ><i class="icon-signout"></i> Logga ut </a>
           </li>
         </ul>
         <form class="navbar-search pull-right">
@@ -26,7 +26,7 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="active"><a href="frontpage.php"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
         <li><a href="reports.html"><i class="icon-list-alt"></i><span>Mina kurser</span> </a> </li>
         <li><a href="guidely.html"><i class="icon-envelope"></i><span>Meddelanden</span> </a></li>
         <li><a href="charts.html"><i class="icon-group"></i><span>Min klass</span> </a> </li>

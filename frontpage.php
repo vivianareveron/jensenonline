@@ -33,6 +33,7 @@
 
 <body>
 
+<!-- Header --> 
 <?php
 include("includes/header.php");
 ?>
@@ -298,8 +299,9 @@ $title = $_SESSION['title'];
 </div>
 <!-- /main -->  
 
+<!-- Footer --> 
 <?php
-include("includes/footer.php");
+include("includes/footer.php"); 
 ?>
 
 <!-- ================================================== --> 
@@ -432,5 +434,3 @@ include("includes/footer.php");
         });
       });
     </script><!-- /Calendar -->
-</body>
-</html>
