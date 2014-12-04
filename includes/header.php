@@ -5,8 +5,9 @@
       
         <div class="nav-collapse">
         <ul class="nav pull-right">
-          <li ><a href="one.php" ><i class="icon-user"></i> Min Profil </a>
-            
+
+          <li ><a href="profile.php" ><i class="icon-user"></i> Min Profil</a>
+
           </li>
           <li><a href="logout.php" ><i class="icon-signout"></i> Logga ut </a>
           </li>
