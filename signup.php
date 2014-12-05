@@ -41,13 +41,147 @@
 include("includes/header.php");
 ?>
     
-<main>
     
+    
+    
+    
+    
+<main>   
     <div class="main">
     <div class="account-container">
         <div class="content clearfix">
-        <h1>Min profil</h1>
-    <p>Här kan du ändra dina uppgifter</p>
+        <h1>Lägg till användare</h1>
+    <p>Lägg till nya elever, lärare och övrig personal i Jensen Online. </p>
+    <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
+
+<?php
+    $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = "" ;
+	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $passErr = "";
+
+//Om användaren trycker på "Sign up"-knappen
+if(isset($_POST["submit"])){								
+	
+		$firstname    = trim($_POST["firstname"]);	
+		$lastname     = trim($_POST["lastname"]);
+		$address      = trim($_POST["address"]);	
+		$postnumber   = trim($_POST["postnumber"]);
+        $postaddress  = trim($_POST["postaddress"]);	
+		$email 	      = trim($_POST["email"]);
+		$phone        = trim($_POST["phone"]);	
+		$mobile       = trim($_POST["mobile"]);
+        $workphone    = trim($_POST["workphone"]);
+		$skype        = trim($_POST["skype"]);	
+		$password     = trim($_POST["password"]);
+
+				
+		
+		if (empty($_POST["title"])) {
+			$titleErr = "Title is required";
+		}
+        if (empty($_POST["class"])) {
+			$classErr = "Class is required";
+		}
+        if (empty($_POST["firstname"])) {
+			$firstErr = "Firstname is required";
+		}
+        if (empty($_POST["lastname"])) {
+			$lastErr = "Lastname is required";
+		}
+	    if (empty($_POST["email"])) {
+			$emailErr = "Email is required";
+	    }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$emailErr = "Invalid email format"; 
+		}
+	    if (empty($_POST["password"])) {
+			$passErr = "Password is required";
+	    }
+	    
+	
+	}
+        
+?>
+            
+<!-- Formulär --> 
+<form action="signup.php" method="POST" >
+        <table>
+            <tr>
+                <th><label for="title">Titel: </label></th>
+                <td>
+                <select required name="title" id="title" >
+                    <option value="">-- Välj --</option>
+                    <option value="student">Elev</option>
+                    <option value="staff">Lärare</option>
+                    <option value="admin">Admin</option>
+                </td>
+                <td><span class="error"> * <?php echo $titleErr; ?></span></td>
+            </tr>
+            <tr>
+                <th><label for="class">Klass: </label></th>
+                <td>
+                <select required name="class" id="class">
+                    <option value="">-- Välj --</option>
+                    <option value="cbk">CBK14</option>
+                    <option value="ipk">IPK14</option>
+                    <option value="ptk">PTK14</option>
+                    <option value="wuk">WUK14</option>
+                    <option value="jensen">Jensen</option>
+                </td>
+                <td><span class="error">* <?php echo $classErr; ?></span></td>
+            </tr>
+            <tr>
+                <td>Förnamn </td>
+                <td><input required type="text" name="firstname" value="<?php echo $firstname; ?>"/><span class="error"> * <?php echo $firstErr; ?></span></td>
+            </tr>
+            <tr>
+                <td>Efternamn </td>
+                <td><input required type="text" name="lastname" value="<?php echo $lastname; ?>"/><span class="error"> * <?php echo $lastErr; ?></span></td>
+            </tr>
+            <tr>
+                <td>Adress </td>
+                <td><input type="text" name="address" value="<?php echo $address; ?>"/></td>
+            </tr>
+            <tr>
+                <td>Postnummer </td>
+                <td><input type="text" name="postnumber" value="<?php echo $postnumber; ?>" /></td>
+            </tr>
+            <tr>
+                <td>Postadress </td>
+                <td><input type="text" name="postaddress" value="<?php echo $postaddress; ?>" /></td>
+            </tr>
+            <tr>
+                <td>E-post </td>
+                <td><input required type="email" name="email" value="<?php echo $email; ?>"/><span class="error"> * <?php echo $emailErr; ?></span></td>
+            </tr>
+            <tr>
+                <td>Telefon </td>
+                <td><input type="text" name="phone" value="<?php echo $phone; ?>"/></td>
+            </tr>
+            <tr>
+                <td>Mobil </td>
+                <td><input type="text" name="mobile" value="<?php echo $mobile; ?>"/></td>
+            </tr>
+            <tr>
+                <td>Arbetstelefon </td>
+                <td><input type="text" name="workphone" value="<?php echo $workphone; ?>"/></td>
+            </tr>
+            <tr>
+                <td>Skype </td>
+                <td><input type="text" name="skype" value="<?php echo $skype; ?>"/></td>
+            </tr>
+            <tr>
+                <td>Password </td>
+                <td><input required type="password" name="password" value="<?php echo $password; ?>" /><span class="error"> * <?php echo $passErr; ?></span></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" name="submit" value="Signup" /></td>
+            </tr>
+            
+        </table>
+    </form>            
+       
+            
             
             
             
