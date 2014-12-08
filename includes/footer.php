@@ -1,3 +1,4 @@
+<footer>
 <div class="extra">
   <div class="extra-inner">
     <div class="container">
@@ -30,6 +31,6 @@
   <!-- /footer-inner --> 
 </div>
 <!-- /footer --> 
-
+</footer>
 </body>
 </html>

@@ -45,20 +45,13 @@ Bootstrap Admin Template by EGrappler.com
 	font-family: 'Open Sans';
 	font-size: 13px;
 	color: #8e8d8d;
-	padding: 11px 15px 10px 50px;
+	padding: 18px 15px 10px 10px;
 	background-color: #fdfdfd;
 	width: 255px;
 	display: block;
 	margin-bottom: 10px;
 	box-shadow: inset 2px 2px 4px #f1f1f1;
 }
-
-.username-field { background: url(../../img/signin/user.png) no-repeat; }
-
-.password-field { background: url(../../img/signin/password.png) no-repeat; }
-
-
-
 
 .login-actions {
 	float: right;
@@ -184,8 +177,8 @@ span.login-checkbox > input[type='checkbox']:checked + label {
     -moz-border-radius: 3px; 
     border-radius: 3px; 
     display: inline-block; 
-    float: right; 
     margin-top: 18px;
+    float: right;
 }
 
 
@@ -250,11 +243,3 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 /* My additions */
-
-label {
-    color: #236491;
-    float: left;
-    
-}
-
-
