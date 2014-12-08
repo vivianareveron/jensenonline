@@ -159,6 +159,34 @@ try{
             echo "Query failed, see error message below: <br /><br />";
             echo $exception. "<br /> <br />";
         }
+     } else if($class == 'Jensen') {
+try{
+        require_once("db_connect.php");
+
+            $query = "SELECT * FROM users WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14' AND title='Student' ORDER BY class, lastname ASC";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+                echo "<table>";
+            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th><th>Klass</th></tr>";
+            
+        foreach($row as $r){
+            echo '<tr>';
+            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
+            echo '<td>',$r['email'],'</td>';
+            echo '<td>',$r['mobile'],'</td>';
+            echo '<td>',$r['skype'],'</td>';
+            echo '<td>',$r['class'],'</td>';
+			}
+			echo '</tr>';
+		echo '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
      }
 ?>
     
