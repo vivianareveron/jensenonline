@@ -35,17 +35,141 @@
 
 <body>
 
+<!-- Känns som detta ovan skall ligga i header.php -->
+    
 <!-- Header --> 
 <?php
 include("includes/header.php");
 ?>
+
+<main> 
+<?php
+$class = $_SESSION['class'];
+?>
     
+<h1>Klasslista <?php echo $class ?></h1>
+        
+<?php
+
+     if($class == 'WUK14') {
+try{
+        require_once("db_connect.php");
+
+            $query = "SELECT * FROM users WHERE class='WUK14' AND title='Student' ORDER BY lastname ASC";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+            echo "<table>";
+            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
+            
+        foreach($row as $r){
+            echo '<tr>';
+            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
+            echo '<td>',$r['email'],'</td>';
+            echo '<td>',$r['mobile'],'</td>';
+            echo '<td>',$r['skype'],'</td>';
+			}
+			echo '</tr>';
+		echo '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+     } else if($class == 'PTK14') {
+try{
+        require_once("db_connect.php");
+
+            $query = "SELECT * FROM users WHERE class='PTK14' AND title='Student' ORDER BY lastname ASC";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+                echo "<table>";
+            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
+            
+        foreach($row as $r){
+            echo '<tr>';
+            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
+            echo '<td>',$r['email'],'</td>';
+            echo '<td>',$r['mobile'],'</td>';
+            echo '<td>',$r['skype'],'</td>';
+			}
+			echo '</tr>';
+		echo '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+     } else if($class == 'IPK14') {
+try{
+        require_once("db_connect.php");
+
+            $query = "SELECT * FROM users WHERE class='IPK14' AND title='Student' ORDER BY lastname ASC";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+                echo "<table>";
+            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
+            
+        foreach($row as $r){
+            echo '<tr>';
+            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
+            echo '<td>',$r['email'],'</td>';
+            echo '<td>',$r['mobile'],'</td>';
+            echo '<td>',$r['skype'],'</td>';
+			}
+			echo '</tr>';
+		echo '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+     } else if($class == 'CBK14') {
+try{
+        require_once("db_connect.php");
+
+            $query = "SELECT * FROM users WHERE class='CBK14' AND title='Student' ORDER BY lastname ASC";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+                echo "<table>";
+            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
+            
+        foreach($row as $r){
+            echo '<tr>';
+            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
+            echo '<td>',$r['email'],'</td>';
+            echo '<td>',$r['mobile'],'</td>';
+            echo '<td>',$r['skype'],'</td>';
+			}
+			echo '</tr>';
+		echo '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+     }
+?>
+    
+</main>    
 
 <!-- Footer -->    
 <?php
 include("includes/footer.php");
 ?>
 
+<!-- Känns som detta nedan skall ligga i footer.php -->
 
 <!-- ================================================== --> 
 <!-- Scripts --> 
