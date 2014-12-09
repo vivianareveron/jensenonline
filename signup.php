@@ -1,12 +1,12 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['email'])){
+  /*  if(isset($_SESSION['email'])){
         echo "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
 
     }else{
         header("Location: login.php");
-    }  
+    }  */
 ?>
 
 <!-- Känns som detta nedan skall ligga i header.php --> 
@@ -55,13 +55,15 @@
     <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
 
 <?php
-    $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = $re_password = "" ;
+    $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = $re_password = "" ;
 	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $passErr = $rePassErr = "";
 
 //Om användaren trycker på "Sign up"-knappen
 if(isset($_POST["submit"])){								
 	
-		$firstname    = trim($_POST["firstname"]);	
+		$title        = trim($_POST["title"]);
+        $class        = trim($_POST["class"]);
+        $firstname    = trim($_POST["firstname"]);	
 		$lastname     = trim($_POST["lastname"]);
 		$address      = trim($_POST["address"]);	
 		$postnumber   = trim($_POST["postnumber"]);
@@ -109,11 +111,13 @@ if(isset($_POST["submit"])){
 		try{
         require_once("db_connect.php");
 
-            $query = "INSERT INTO users (firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, password) ";
-            $query .= "VALUES (:firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :password) ";
+            $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, password) ";
+            $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :password) ";
 
             $ps = $db->prepare($query); //prepared statement
             $result = $ps->execute(array(
+                'title'=>$title,
+                'class'=>$class,
                 'firstname'=>$firstname,
                 'lastname'=>$lastname, 
                 'address'=>$address,
@@ -154,9 +158,9 @@ if(isset($_POST["submit"])){
                 <td>
                 <select required name="title" id="title" >
                     <option value="">-- Välj --</option>
-                    <option value="student">Elev</option>
-                    <option value="staff">Lärare</option>
-                    <option value="admin">Admin</option>
+                    <option value="Student">Elev</option>
+                    <option value="Staff">Lärare</option>
+                    <option value="Admin">Admin</option>
                 </td>
                 <td><span class="error"> * <?php echo $titleErr; ?></span></td>
             </tr>
@@ -165,11 +169,11 @@ if(isset($_POST["submit"])){
                 <td>
                 <select required name="class" id="class">
                     <option value="">-- Välj --</option>
-                    <option value="cbk">CBK14</option>
-                    <option value="ipk">IPK14</option>
-                    <option value="ptk">PTK14</option>
-                    <option value="wuk">WUK14</option>
-                    <option value="jensen">Jensen</option>
+                    <option value="CBK14">CBK14</option>
+                    <option value="IPK14">IPK14</option>
+                    <option value="PTK14">PTK14</option>
+                    <option value="WUK14">WUK14</option>
+                    <option value="Jensen">Jensen</option>
                 </td>
                 <td><span class="error">* <?php echo $classErr; ?></span></td>
             </tr>

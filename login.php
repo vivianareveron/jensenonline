@@ -97,12 +97,7 @@ try{
     }
 
     $user = $ps->fetch(PDO::FETCH_ASSOC); //associative array
-}else {
-    
-}
-if(isset($_GET["deleted"])) {
-    echo "deleted";
-}
+}else 
 
 ?>
 
