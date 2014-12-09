@@ -155,10 +155,10 @@ include("includes/header.php");
     
     
     <form action="one.php" method="POST" >
-        <table >
+        <table class="table">
             <tr class= "login-fields">
                 <td>Förnamn: </td>
-                <td class="field"><input type="text" readonly="" name="firstname" class="login username-field" id="username" value=<?php echo $firstname;?> /></td>
+                <td class="field"><input type="text" readonly="" name="firstname"  id="username" value=<?php echo $firstname;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Efternamn: </td>
@@ -166,56 +166,61 @@ include("includes/header.php");
             </tr>
             <tr class= "login-fields">
                 <td>Adress: </td>
-                <td class="field"><input type="text" name="address" class="login username-field" id="username" value=<?php echo $address;?> /></td>
+                <td class="field"><input type="text" name="address"  id="username" value=<?php echo $address;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Postnummer: </td>
-                <td class="field"><input type="text" name="postnumber" class="login username-field" id="username" value=<?php echo $postnumber;?> /></td>
+                <td class="field"><input type="text" name="postnumber" id="username" value=<?php echo $postnumber;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Postadress: </td>
-                <td class="field"><input type="text" name="postaddress" class="login username-field" id="username" value=<?php echo $postaddress;?> /></td>
+                <td class="field"><input type="text" name="postaddress" id="username" value=<?php echo $postaddress;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>E-post: </td>
-                <td class="field"><input type="text" name="email" class="login username-field" id="username" value=<?php echo $email;?> /></td>
+                <td class="field"><input type="text" name="email" id="username" value=<?php echo $email;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Hemtelefon: </td>
-                <td class="field"><input type="text" name="phone" class="login username-field" id="username"value=<?php echo $phone;?> /></td>
+                <td class="field"><input type="text" name="phone" id="username"value=<?php echo $phone;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Mobil: </td>
-                <td class="field"><input type="text" name="mobile" class="login username-field" id="username" value=<?php echo $mobile;?> /></td>
+                <td class="field"><input type="text" name="mobile" id="username" value=<?php echo $mobile;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Arbetstelefon: </td>
-                <td class="field"><input type="text" name="workphone" class="login username-field" id="username" value=<?php echo $workphone;?> /></td>
+                <td class="field"><input type="text" name="workphone"  id="username" value=<?php echo $workphone;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Skype: </td>
-                <td class="field"><input type="text" name="skype" class="login username-field" id="username" value=<?php echo $skype;?> /></td>
+                <td class="field"><input type="text" name="skype" id="username" value=<?php echo $skype;?> /></td>
             </tr>
             <tr>
+                
                 <td class="login-actions"><input type="submit" name="update" value="Uppdatera" class="button btn btn-success btn-large" /></td>
             </tr>
+        
         </table>
-    
+  
+        
     </form> 
 <!-- Vet inte om uppladdning av bild kan ligga i uppdateringsformuläret så gör en separat för nu -->            
     <h2>Lägg upp en bild</h2>
-    
+    <i>Storlek max 30kB och endast jpg eller gif.</i>
     <form action="upload.php" method="POST" enctype="multipart/form-data">
+        
+        
         <table>
-            <tr>
-                    <td>Bild: </td>
-                    <td><input type="file" name="upfile" value="" /></td>
-            </tr>
-           
-            <i>Storlek max 30kB och endast jpg eller gif.</i>
             
             <tr>
-            <td><input type="submit" name="upload" value="Ladda upp" /></td>
+                    <td class="bild">Bild:</td>
+                    <td><input type="file" name="upfile" value=""/></td>
+            </tr>
+        
+            
+            <tr>
+            <td><input type="submit" name="upload" value="Ladda upp" class="button btn btn-success"/></td>
             </tr>
             
         </table>
