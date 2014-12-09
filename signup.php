@@ -38,7 +38,7 @@
 
 <!-- Header --> 
 <?php
-include("includes/header.php");
+//include("includes/header.php"); //detta krockar på något sätt??
 ?>
     
     
@@ -55,8 +55,8 @@ include("includes/header.php");
     <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
 
 <?php
-    $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = "" ;
-	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $passErr = "";
+    $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = $re_password = "" ;
+	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $passErr = $rePassErr = "";
 
 //Om användaren trycker på "Sign up"-knappen
 if(isset($_POST["submit"])){								
@@ -72,8 +72,8 @@ if(isset($_POST["submit"])){
         $workphone    = trim($_POST["workphone"]);
 		$skype        = trim($_POST["skype"]);	
 		$password     = trim($_POST["password"]);
-
-				
+        $re_password  = trim($_POST["re_password"]);
+	
 		
 		if (empty($_POST["title"])) {
 			$titleErr = "Title is required";
@@ -96,7 +96,51 @@ if(isset($_POST["submit"])){
 	    if (empty($_POST["password"])) {
 			$passErr = "Password is required";
 	    }
+        if (empty($_POST["re_password"])) {
+			$rePassErr = "Re-entered password is required";
+	    } 
+        if($re_password!=$password) {
+            $rePassErr = "The re-entered password don't match";
+        }
 	    
+    if(empty($titleErr) && empty($classErr) && empty($firstErr) && empty($lastErr) && empty($emailErr) && empty($passErr) && empty($rePassErr)){
+			echo "It is validated. You are ready for some DB statements now"; 
+		
+		try{
+        require_once("db_connect.php");
+
+            $query = "INSERT INTO users (firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, password) ";
+            $query .= "VALUES (:firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :password) ";
+
+            $ps = $db->prepare($query); //prepared statement
+            $result = $ps->execute(array(
+                'firstname'=>$firstname,
+                'lastname'=>$lastname, 
+                'address'=>$address,
+                'postnumber'=>$postnumber,
+                'postaddress'=>$postaddress,
+                'email'=>$email, 
+                'phone'=>$phone,
+                'mobile'=>$mobile,
+                'workphone'=>$workphone, 
+                'skype'=>$skype,
+                'password'=>$password,
+            ));
+
+                if ($result) {
+                header("Location: login.php");
+            }else {
+                 echo "Signup failed";
+            }
+
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+
+        $user = $ps->fetch(PDO::FETCH_ASSOC); //associative array
+       }
+
 	
 	}
         
@@ -173,6 +217,11 @@ if(isset($_POST["submit"])){
                 <td>Password </td>
                 <td><input required type="password" name="password" value="<?php echo $password; ?>" /><span class="error"> * <?php echo $passErr; ?></span></td>
             </tr>
+            <tr>
+			<td>Re-password:</td>
+			<td><input required type="password" name="re_password" /><span class="error"> * <?php echo $rePassErr; ?></span></td>
+		</tr>
+
             
             <tr>
                 <td><input type="submit" name="submit" value="Signup" /></td>
