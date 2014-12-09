@@ -38,7 +38,7 @@
 
 <!-- Header --> 
 <?php
-//include("includes/header.php"); //detta krockar på något sätt??
+//include("includes/header.php"); //detta krockar med min kod på något sätt??
 ?>
     
     
@@ -55,8 +55,8 @@
     <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
 
 <?php
-    $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $password = $re_password = "" ;
-	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $passErr = $rePassErr = "";
+    $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $username = $password = $re_password = "" ;
+	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $userErr = $passErr = $rePassErr = "";
 
 //Om användaren trycker på "Sign up"-knappen
 if(isset($_POST["submit"])){								
@@ -73,6 +73,7 @@ if(isset($_POST["submit"])){
 		$mobile       = trim($_POST["mobile"]);
         $workphone    = trim($_POST["workphone"]);
 		$skype        = trim($_POST["skype"]);	
+        $username     = trim($_POST["username"]);
 		$password     = trim($_POST["password"]);
         $re_password  = trim($_POST["re_password"]);
 	
@@ -92,27 +93,61 @@ if(isset($_POST["submit"])){
 	    if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
 	    }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$emailErr = "Invalid email format"; 
-		}
+        if (empty($_POST["username"])) {
+			$userErr = "Username is required";
+	    }
 	    if (empty($_POST["password"])) {
 			$passErr = "Password is required";
 	    }
         if (empty($_POST["re_password"])) {
 			$rePassErr = "Re-entered password is required";
 	    } 
+    
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$emailErr = "Invalid email format"; 
+		}
         if($re_password!=$password) {
             $rePassErr = "The re-entered password don't match";
         }
+    
+        try{
+            require_once("db_connect.php");
+
+            $query = "SELECT * ";
+            $query .= "FROM users ";
+            $query .= "WHERE username = :username "; 
+
+            $ps = $db->prepare($query); 
+            $result = $ps->execute(
+                array(
+                    'username'=>$username 
+                ));
+            $result = $ps->fetch(PDO::FETCH_ASSOC);
+
+                if($username){	
+                    if ($result ['username']== $username) {
+
+                        $_SESSION["username"] = $result['username'];
+
+                    $userErr = "Username already exist. Please create a new username.<br /><br />";
+
+                    } 
+                } 
+
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+
 	    
-    if(empty($titleErr) && empty($classErr) && empty($firstErr) && empty($lastErr) && empty($emailErr) && empty($passErr) && empty($rePassErr)){
-			echo "It is validated. You are ready for some DB statements now"; 
+        if(empty($titleErr) && empty($classErr) && empty($firstErr) && empty($lastErr) && empty($emailErr) && empty($userErr) && empty($passErr) && empty($rePassErr)){
+                echo "It is validated. You are ready for some DB statements now"; 
 		
 		try{
         require_once("db_connect.php");
 
-            $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, password) ";
-            $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :password) ";
+            $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, username, password) ";
+            $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :username, :password) ";
 
             $ps = $db->prepare($query); //prepared statement
             $result = $ps->execute(array(
@@ -128,6 +163,7 @@ if(isset($_POST["submit"])){
                 'mobile'=>$mobile,
                 'workphone'=>$workphone, 
                 'skype'=>$skype,
+                'username'=>$username,
                 'password'=>$password,
             ));
 
@@ -179,11 +215,11 @@ if(isset($_POST["submit"])){
             </tr>
             <tr>
                 <td>Förnamn </td>
-                <td><input required type="text" name="firstname" value="<?php echo $firstname; ?>"/><span class="error"> * <?php echo $firstErr; ?></span></td>
+                <td><input type="text" name="firstname" value="<?php echo $firstname; ?>"/><span class="error"> * <?php echo $firstErr; ?></span></td>
             </tr>
             <tr>
                 <td>Efternamn </td>
-                <td><input required type="text" name="lastname" value="<?php echo $lastname; ?>"/><span class="error"> * <?php echo $lastErr; ?></span></td>
+                <td><input type="text" name="lastname" value="<?php echo $lastname; ?>"/><span class="error"> * <?php echo $lastErr; ?></span></td>
             </tr>
             <tr>
                 <td>Adress </td>
@@ -199,7 +235,7 @@ if(isset($_POST["submit"])){
             </tr>
             <tr>
                 <td>E-post </td>
-                <td><input required type="email" name="email" value="<?php echo $email; ?>"/><span class="error"> * <?php echo $emailErr; ?></span></td>
+                <td><input type="email" name="email" value="<?php echo $email; ?>"/><span class="error"> * <?php echo $emailErr; ?></span></td>
             </tr>
             <tr>
                 <td>Telefon </td>
@@ -218,12 +254,16 @@ if(isset($_POST["submit"])){
                 <td><input type="text" name="skype" value="<?php echo $skype; ?>"/></td>
             </tr>
             <tr>
+                <td>Username </td>
+                <td><input type="text" name="username" value="<?php echo $username; ?>"/><span class="error"> * <?php echo $userErr; ?></span></td>
+            </tr>
+            <tr>
                 <td>Password </td>
-                <td><input required type="password" name="password" value="<?php echo $password; ?>" /><span class="error"> * <?php echo $passErr; ?></span></td>
+                <td><input type="password" name="password" value="<?php echo $password; ?>" /><span class="error"> * <?php echo $passErr; ?></span></td>
             </tr>
             <tr>
 			<td>Re-password:</td>
-			<td><input required type="password" name="re_password" /><span class="error"> * <?php echo $rePassErr; ?></span></td>
+			<td><input type="password" name="re_password" /><span class="error"> * <?php echo $rePassErr; ?></span></td>
 		</tr>
 
             
