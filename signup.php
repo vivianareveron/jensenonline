@@ -77,7 +77,6 @@ if(isset($_POST["submit"])){
 		$password     = trim($_POST["password"]);
         $re_password  = trim($_POST["re_password"]);
 	
-		
 		if (empty($_POST["title"])) {
 			$titleErr = "Title is required";
 		}
@@ -89,6 +88,9 @@ if(isset($_POST["submit"])){
 		}
         if (empty($_POST["lastname"])) {
 			$lastErr = "Lastname is required";
+		}
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$emailErr = "Invalid email format"; 
 		}
 	    if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
@@ -102,10 +104,6 @@ if(isset($_POST["submit"])){
         if (empty($_POST["re_password"])) {
 			$rePassErr = "Re-entered password is required";
 	    } 
-    
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$emailErr = "Invalid email format"; 
-		}
         if($re_password!=$password) {
             $rePassErr = "The re-entered password don't match";
         }
@@ -144,7 +142,7 @@ if(isset($_POST["submit"])){
                 echo "It is validated. You are ready for some DB statements now"; 
 		
 		try{
-        require_once("../includes/db_connect.php");
+        require_once("includes/db_connect.php");
 
             $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, username, password) ";
             $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :username, :password) ";
@@ -192,7 +190,7 @@ if(isset($_POST["submit"])){
             <tr>
                 <th><label for="title">Titel: </label></th>
                 <td>
-                <select required name="title" id="title" >
+                <select name="title" id="title" >
                     <option value="">-- Välj --</option>
                     <option value="Student">Elev</option>
                     <option value="Staff">Lärare</option>
@@ -203,7 +201,7 @@ if(isset($_POST["submit"])){
             <tr>
                 <th><label for="class">Klass: </label></th>
                 <td>
-                <select required name="class" id="class">
+                <select name="class" id="class">
                     <option value="">-- Välj --</option>
                     <option value="CBK14">CBK14</option>
                     <option value="IPK14">IPK14</option>

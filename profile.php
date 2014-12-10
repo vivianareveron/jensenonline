@@ -131,7 +131,7 @@ include("layout/header.php");
                 $fileName = $_FILES['upfile']['name'];           		        //this is the actual name of the file   		           
                 $fileTempName = $_FILES['upfile']['tmp_name'];					//this is the temporary name of the file     
 				$fileSize =  $_FILES['upfile']['size']; 						//this is the filesize
-                $path = "jensenonline/uploads/";												//this is the path where you want to save the actual file 
+                $path = "/Applications/XAMPP/htdocs/jensen/GIT/jensenonline/uploads/";												//this is the path where you want to save the actual file 
                 $newPathAndName = $path . $fileName;		//uploads/ruler.jpg					//this is the actual path and actual name of the file
 				
 				//you can use move_uploaded_file() to move and rename the temp file
@@ -208,7 +208,7 @@ include("layout/header.php");
 <!-- Vet inte om uppladdning av bild kan ligga i uppdateringsformuläret så gör en separat för nu -->            
     <h2>Lägg upp en bild</h2>
     <i>Storlek max 30kB och endast jpg eller gif.</i>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <form action="profile.php" method="POST" enctype="multipart/form-data">
         
         
         <table>
