@@ -111,7 +111,7 @@ if(isset($_POST["submit"])){
         }
     
         try{
-            require_once("../includes/db_connect.php");
+            require_once("includes/db_connect.php");
 
             $query = "SELECT * ";
             $query .= "FROM users ";
