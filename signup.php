@@ -38,7 +38,7 @@
 
 <!-- Header --> 
 <?php
-//include("includes/header.php"); //detta krockar med min kod på något sätt??
+//include("layout/header.php"); //detta krockar med min kod på något sätt??
 ?>
     
     
@@ -289,7 +289,7 @@ if(isset($_POST["submit"])){
   
 <!-- Footer -->    
 <?php
-include("includes/footer.php");
+include("layout/footer.php");
 ?>
 
     

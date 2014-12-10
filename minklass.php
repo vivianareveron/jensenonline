@@ -39,7 +39,7 @@
     
 <!-- Header --> 
 <?php
-include("includes/header.php");
+include("layout/header.php");
 ?>
 
 <main> 
@@ -248,7 +248,7 @@ try{
 
 <!-- Footer -->    
 <?php
-include("includes/footer.php");
+include("layout/footer.php");
 ?>
 
 <!-- Känns som detta nedan skall ligga i footer.php -->

@@ -37,7 +37,7 @@
 
 <!-- Header --> 
 <?php
-include("includes/header.php");
+include("layout/header.php");
 ?>
     
     <div class="container">
@@ -303,7 +303,7 @@ $title = $_SESSION['title'];
 
 <!-- Footer --> 
 <?php
-include("includes/footer.php"); 
+include("layout/footer.php"); 
 ?>
 
 <!-- ================================================== --> 

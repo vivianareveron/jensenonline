@@ -34,7 +34,7 @@
 
 <!-- Header --> 
 <?php
-include("includes/header.php");
+include("layout/header.php");
 ?>
     <div class="main">
     <div class="account-container">
@@ -238,7 +238,7 @@ include("includes/header.php");
   
 <!-- Footer -->    
 <?php
-include("includes/footer.php");
+include("layout/footer.php");
 ?>
 
 

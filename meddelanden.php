@@ -36,14 +36,14 @@
 <body>
 <!-- Header --> 
 <?php
-include("includes/header.php");
+include("layout/header.php");
 ?>
 
 
 
 <!-- Footer -->    
 <?php
-include("includes/footer.php");
+include("layout/footer.php");
 ?>
 
 
