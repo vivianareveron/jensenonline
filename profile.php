@@ -70,7 +70,7 @@ include("layout/header.php");
         $skype = $_POST['skype'];
 
     try{
-        require_once("db_connect.php"); 
+        require_once("../includes/db_connect.php"); 
             $query = "UPDATE users ";
             $query .= "SET address = :address, postnumber = :postnumber, postaddress = :postaddress, email = :email, phone = :phone, mobile = :mobile, workphone = :workphone, skype = :skype ";
             $query .= "WHERE id = :id"; 

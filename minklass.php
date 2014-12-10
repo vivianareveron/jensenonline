@@ -53,7 +53,7 @@ $class = $_SESSION['class'];
 
      if($class == 'WUK14') {
 try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "SELECT * FROM users WHERE class='WUK14' AND title='Student' ORDER BY lastname ASC";
 
@@ -80,7 +80,7 @@ try{
         }
      } else if($class == 'PTK14') {
 try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "SELECT * FROM users WHERE class='PTK14' AND title='Student' ORDER BY lastname ASC";
 
@@ -107,7 +107,7 @@ try{
         }
      } else if($class == 'IPK14') {
 try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "SELECT * FROM users WHERE class='IPK14' AND title='Student' ORDER BY lastname ASC";
 
@@ -134,7 +134,7 @@ try{
         }
      } else if($class == 'CBK14') {
 try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "SELECT * FROM users WHERE class='CBK14' AND title='Student' ORDER BY lastname ASC";
 
@@ -161,7 +161,7 @@ try{
         }
      } else if($class == 'Jensen') {
 try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "SELECT * FROM users WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14' AND title='Student' ORDER BY class, lastname ASC";
 

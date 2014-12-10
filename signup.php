@@ -111,7 +111,7 @@ if(isset($_POST["submit"])){
         }
     
         try{
-            require_once("db_connect.php");
+            require_once("../includes/db_connect.php");
 
             $query = "SELECT * ";
             $query .= "FROM users ";
@@ -144,7 +144,7 @@ if(isset($_POST["submit"])){
                 echo "It is validated. You are ready for some DB statements now"; 
 		
 		try{
-        require_once("db_connect.php");
+        require_once("../includes/db_connect.php");
 
             $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, username, password) ";
             $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :username, :password) ";
