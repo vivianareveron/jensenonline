@@ -43,7 +43,7 @@ $password = $_POST['password'];
 $title = $_POST['title'];
 
 try{
-    require_once("includes/db_connect.php");
+    require_once("../includes/db_connect.php");
         
         $query = "SELECT * ";
         $query .= "FROM users ";

@@ -70,7 +70,7 @@ include("layout/header.php");
         $skype = $_POST['skype'];
 
     try{
-        require_once("includes/db_connect.php"); 
+        require_once("../includes/db_connect.php"); 
             $query = "UPDATE users ";
             $query .= "SET address = :address, postnumber = :postnumber, postaddress = :postaddress, email = :email, phone = :phone, mobile = :mobile, workphone = :workphone, skype = :skype ";
             $query .= "WHERE id = :id"; 
@@ -154,7 +154,7 @@ include("layout/header.php");
 ?>
     
     
-    <form action="one.php" method="POST" >
+    <form action="profile.php" method="POST" >
         <table class="table">
             <tr class= "login-fields">
                 <td>Förnamn: </td>
