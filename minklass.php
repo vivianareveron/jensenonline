@@ -1,4 +1,5 @@
 <?php
+    require_once("includes/functions.php");
     session_start();
 
     if(isset($_SESSION['email'])){
@@ -50,144 +51,14 @@ $class = $_SESSION['class'];
 <h1>Klasslista <?php echo $class ?></h1>
         
 <?php
+    
+    //alla if and else ersatta av två funktioner
+    if($class == 'Jensen') {
+        echo show_all_classes($class);
+    } else {
+        echo show_class($class);
+}
 
-     if($class == 'WUK14') {
-try{
-        require_once("includes/db_connect.php");
-
-            $query = "SELECT * FROM users WHERE class='WUK14' AND title='Student' ORDER BY lastname ASC";
-
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array());
-
-            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-            echo "<table>";
-            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
-            
-        foreach($row as $r){
-            echo '<tr>';
-            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
-            echo '<td>',$r['email'],'</td>';
-            echo '<td>',$r['mobile'],'</td>';
-            echo '<td>',$r['skype'],'</td>';
-			}
-			echo '</tr>';
-		echo '</table><br />';
-     
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
-        }
-     } else if($class == 'PTK14') {
-try{
-        require_once("includes/db_connect.php");
-
-            $query = "SELECT * FROM users WHERE class='PTK14' AND title='Student' ORDER BY lastname ASC";
-
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array());
-
-            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-                echo "<table>";
-            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
-            
-        foreach($row as $r){
-            echo '<tr>';
-            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
-            echo '<td>',$r['email'],'</td>';
-            echo '<td>',$r['mobile'],'</td>';
-            echo '<td>',$r['skype'],'</td>';
-			}
-			echo '</tr>';
-		echo '</table><br />';
-     
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
-        }
-     } else if($class == 'IPK14') {
-try{
-        require_once("includes/db_connect.php");
-
-            $query = "SELECT * FROM users WHERE class='IPK14' AND title='Student' ORDER BY lastname ASC";
-
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array());
-
-            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-                echo "<table>";
-            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
-            
-        foreach($row as $r){
-            echo '<tr>';
-            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
-            echo '<td>',$r['email'],'</td>';
-            echo '<td>',$r['mobile'],'</td>';
-            echo '<td>',$r['skype'],'</td>';
-			}
-			echo '</tr>';
-		echo '</table><br />';
-     
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
-        }
-     } else if($class == 'CBK14') {
-try{
-        require_once("includes/db_connect.php");
-
-            $query = "SELECT * FROM users WHERE class='CBK14' AND title='Student' ORDER BY lastname ASC";
-
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array());
-
-            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-                echo "<table>";
-            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
-            
-        foreach($row as $r){
-            echo '<tr>';
-            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
-            echo '<td>',$r['email'],'</td>';
-            echo '<td>',$r['mobile'],'</td>';
-            echo '<td>',$r['skype'],'</td>';
-			}
-			echo '</tr>';
-		echo '</table><br />';
-     
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
-        }
-     } else if($class == 'Jensen') {
-try{
-        require_once("includes/db_connect.php");
-
-            $query = "SELECT * FROM users WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14' AND title='Student' ORDER BY class, lastname ASC";
-
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array());
-
-            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-                echo "<table>";
-            echo "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th><th>Klass</th></tr>";
-            
-        foreach($row as $r){
-            echo '<tr>';
-            echo '<td>',$r['lastname'],',',$r['firstname'],'</td>';
-            echo '<td>',$r['email'],'</td>';
-            echo '<td>',$r['mobile'],'</td>';
-            echo '<td>',$r['skype'],'</td>';
-            echo '<td>',$r['class'],'</td>';
-			}
-			echo '</tr>';
-		echo '</table><br />';
-     
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
-        }
-     }
 ?>
     
 </main>    

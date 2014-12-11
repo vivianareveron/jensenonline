@@ -20,31 +20,19 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">     
 <link href="css/pages/signin.css" rel="stylesheet" type="text/css">
 
-
 <body>
    
     <div class="navbar navbar-fixed-top">
-	
 	<div class="navbar-inner">
-		
 		<div class="container">
-
-			
 			<a class="brand" href="index.html">
 				<img src=img/Jensen.gif>			
 			</a>		
-			
-	
 		</div> <!-- /container -->
-		
 	</div> <!-- /navbar-inner -->
-	
 </div> <!-- /navbar -->
 
     
-    
- 
-          
 
 <?php
 
