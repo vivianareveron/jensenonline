@@ -1,12 +1,7 @@
 <?php
+    require_once("../includes/functions.php");
     session_start();
-
-    if(isset($_SESSION['email'])){
-        echo "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
-
-    }else{
-        header("Location: login.php");
-    }  
+    echo logged_in();   //if-satsen ersatt av en funktion  
 
     $pageTitle = "Mina kurser";
     $section = "minakurser";

@@ -2,6 +2,17 @@
 	//session_start();
 	$_SESSION['msg'] = "";
 
+//MARIES funktioner
+    
+    function logged_in() {                  //används på alla sidor
+         if(isset($_SESSION['email'])) {
+            $output = "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
+
+        }else{
+            header("Location: login.php");
+        }
+        return $output;
+    }
 
     function show_class($myClass) {         //används på minklass.php
          try{
@@ -35,7 +46,7 @@
              
         }
         return $output; 
-}
+    }
 
     function show_all_classes($myClass){    //används på minklass.php
         try{
@@ -66,10 +77,11 @@
             echo $exception. "<br /> <br />";
         }
         return $output;
-}
+    }
 
 
 
+//SIBARS funktioner
 
 /*	
 	function redirect_to($new_location) { 
