@@ -284,23 +284,7 @@ if(isset($_POST["submit"])){
 </div> <!-- class main-->
 
 </main>
-  
-<!-- Footer -->    
+     
 <?php
 include("layout/footer.php");
 ?>
-
-    
-    
-<!-- Känns som detta nedan skall ligga i footer.php -->
-    
-<!-- ================================================== --> 
-<!-- Scripts --> 
-<script src="js/jquery-1.7.2.min.js"></script> 
-<script src="js/excanvas.min.js"></script> 
-<script src="js/chart.min.js" type="text/javascript"></script> 
-<script src="js/bootstrap.js"></script>
-<script src="js/base.js"></script> 
-    
-<!-- Känns som detta ovan skall ligga i footer.php -->
-  
