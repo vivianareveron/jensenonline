@@ -280,11 +280,11 @@ border-color: #236491;
 
 	border-top: 1px solid #236491;
 	border-bottom: 1px solid #236491;
-
+    
 }
 
 .extra-inner {
-	padding: 20px 0;
+	padding: 10px 0 0 0;
 	
 	font-size: 11px;
 	color: #BBB;
@@ -294,6 +294,12 @@ border-color: #236491;
 
 .extra a {
 	color: #999;
+    
+}
+
+.extra a:hover {
+	color: #FFF;
+	text-decoration: none;
 }
 
 .extra h4 {
@@ -305,14 +311,27 @@ border-color: #236491;
 .extra ul {
 	padding: 0;
 	margin: 0;
+    text-align: center;
+    
 }
 
 .extra li {
-	margin-bottom: .6em;
-	
+	margin-bottom: 0;
+	display: inline-block;
 	list-style: none;
+    font-size: 1.2em;
+    padding: 0 7px 0 7px;
 }
 
+.extra .container > ul > li > a > i {
+	display: inline-block;
+	
+	width: 24px;
+	height: 24px;
+	margin-top: 11px;
+	margin-bottom: -3px;
+	font-size: 20px;
+}
 
 
 
@@ -328,7 +347,7 @@ border-color: #236491;
 }
 
 .footer-inner {
-	padding: 15px 0;
+	padding-bottom: 5px;
 	
 	font-size: 12px;
 	background: #236491;
@@ -1142,6 +1161,56 @@ color: #333;
 
 .ML0 { margin-left:0}
 .MR0 { margin-right:0;}
+
+/*------------------------------------------------------------------
+[9. Shortcuts / .shortcuts]
+*/
+
+.shortcuts {
+	text-align: center;	
+}
+
+.shortcuts .shortcut { 
+	width: 45%;
+	display: inline-block;
+	padding: 12px 0;
+	margin: 0 .9% 1em;
+	vertical-align: top;	
+	
+	text-decoration: none;
+	
+	background: #dce2ed;
+	
+	border-radius: 5px;
+}
+
+.shortcuts .shortcut .shortcut-icon {
+	margin-top: .25em;
+	margin-bottom: .25em;
+	
+	font-size: 32px;
+	color: #545454;
+}
+
+.shortcuts .shortcut:hover {
+	background: #236491;
+}
+
+.shortcuts .shortcut:hover span{
+	color: #fff;
+}
+
+.shortcuts .shortcut:hover .shortcut-icon {
+	color: #fff;
+}
+
+.shortcuts .shortcut-label {
+	display: block;
+	
+	font-weight: 400;
+	color: #545454;
+}
+
 
 
 

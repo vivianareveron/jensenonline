@@ -27,9 +27,12 @@
                 ));
 
             $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-            $output = "<table>";
+            $output = "<table class='table table-striped table-bordered'>";
+            $output .= "<thead>";
             $output .= "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th></tr>";
-            
+            $output .= "</head>"; 
+            $output .= "<tbody>";
+             
         foreach($row as $r){
             $output .= '<tr>';
             $output .= '<td>' . $r['lastname'] .','. $r['firstname'] .'</td>';
@@ -38,6 +41,7 @@
             $output .= '<td>' . $r['skype'] .'</td>';
             }
             $output .= '</tr>';
+            $output .= "</tbody>";
             $output .= '</table><br />';
      
         } catch(Exception $exception) {
@@ -58,7 +62,7 @@
             $result = $ps->execute(array());
 
             $row = $ps->fetchAll(PDO::FETCH_ASSOC);
-            $output = "<table>";
+            $output = "<table class='table table-striped table-bordered'>";
             $output .= "<tr><th>Namn</th><th>Email</th><th>Mobil</th><th>Skype</th><th>Klass</th></tr>";
             
         foreach($row as $r){
