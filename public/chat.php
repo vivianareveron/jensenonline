@@ -3,15 +3,14 @@
 <?php include("layout/header.php"); ?>
 
 <?php
-    echo logged_in();   //if-satsen ersatt av en funktion
-    
     $pageTitle = "Chat";
     $section = "chat";
 ?>
 <link href="css/pages/chat.css" rel="stylesheet">
 
 <main> 
-
+        <h1>Chat</h1>
+        <?php echo logged_in(); ?>
 
 </main>
     

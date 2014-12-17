@@ -1,18 +1,19 @@
 <?php
 	session_start();
-	$_SESSION['msg'] = "";
+	$_SESSION['msg'] = null;
 
 //MARIES funktioner
     
     function logged_in() {                  //används på alla sidor 
         if(isset($_SESSION['email'])) {
-            $output = "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
+            $output = $_SESSION['firstname']." ".$_SESSION['lastname']. ", ".$_SESSION['title']. " i klass " .$_SESSION['class'];
 
         }else{
             header("Location: login.php");
         }
         return $output;
     }
+
 
     function show_class($myClass) {         //används på minklass.php
         global $db;  
@@ -50,6 +51,7 @@
         }
         return $output; 
     }
+
 
     function show_all_classes($myClass){    //används på minklass.php
         global $db; 

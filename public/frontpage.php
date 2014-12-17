@@ -3,8 +3,6 @@
 <?php include("layout/header.php"); ?>
 
 <?php
-    echo logged_in();   //if-satsen ersatt av en funktion
-
     $pageTitle = "Dashboard";
     $section = "dashboard";
 ?>
@@ -14,6 +12,7 @@
     <div class="container">
 
         <h1>Välkommen till Jensen Online</h1>
+        <?php echo logged_in(); ?>
 
 
         

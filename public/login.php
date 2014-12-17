@@ -1,25 +1,24 @@
-<?php
-    session_start();
-?>
+<?php require_once("../includes/db_connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
 
 <!DOCTYPE html>
 <html lang="">
     <head>
-    <meta charset="utf-8">
-    <title>Jensen Online 2.0</title>
+        <meta charset="utf-8">
+        <title>Jensen Online 2.0</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
-    
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes"> 
 
-<link href="css/font-awesome.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    
-<link href="css/style.css" rel="stylesheet" type="text/css">     
-<link href="css/pages/signin.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet" type="text/css">     
+        <link href="css/pages/signin.css" rel="stylesheet" type="text/css">
+    </head>
 <body>
    
     <div class="navbar navbar-fixed-top">
@@ -32,19 +31,16 @@
 	</div> <!-- /navbar-inner -->
 </div> <!-- /navbar -->
 
-    
 
 <?php
 
 if(isset($_POST["submit"])) {
     
-$email = $_POST['email'];
-$password = $_POST['password'];
-$title = $_POST['title'];
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $title = trim($_POST['title']);
 
-try{
-    require_once("../includes/db_connect.php");
-        
+    try{    
         $query = "SELECT * ";
         $query .= "FROM users ";
         $query .= "WHERE email = :email "; //placeholders som..
@@ -76,7 +72,7 @@ try{
                 $_SESSION['id'] = $user['id']; //till nästa sida som är frontpage.php
                 header("Location: frontpage.php");
         }else {
-             echo "Du har angivit felaktigt användarnamn, lösenord eller behörighet. Vänligen försök igen.";
+             $_SESSION['msg'] = "Du har angivit felaktigt användarnamn, lösenord eller behörighet. Vänligen försök igen.";
         }
 
     } catch(Exception $exception) {
@@ -89,12 +85,14 @@ try{
 
 ?>
 
-
+<!-- FORMULÄRET -->
+    
  <div class="account-container">
       <div class="content clearfix">
     
     <form action="login.php" method="POST">
         <h1>Logga in</h1>
+        <?php echo $_SESSION['msg']; ?><br />
         <table>
             
             <tr>
