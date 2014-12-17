@@ -1,11 +1,11 @@
 <?php
-	//session_start();
+	session_start();
 	$_SESSION['msg'] = "";
 
 //MARIES funktioner
     
-    function logged_in() {                  //används på alla sidor
-         if(isset($_SESSION['email'])) {
+    function logged_in() {                  //används på alla sidor 
+        if(isset($_SESSION['email'])) {
             $output = "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
 
         }else{
@@ -15,9 +15,8 @@
     }
 
     function show_class($myClass) {         //används på minklass.php
-         try{
-            require_once("db_connect.php");
-
+        global $db;  
+        try{
             $query = "SELECT * FROM users WHERE class=:class AND title='Student' ORDER BY lastname ASC";
 
             $ps = $db->prepare($query);
@@ -53,9 +52,8 @@
     }
 
     function show_all_classes($myClass){    //används på minklass.php
+        global $db; 
         try{
-            require_once("db_connect.php");
-
             $query = "SELECT * FROM users WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14' AND title='Student' ORDER BY class, lastname ASC";
 
             $ps = $db->prepare($query);
