@@ -1,14 +1,7 @@
-<?php
-    session_start();
-    $section = 'signup';
+<?php require_once("../includes/db_connect.php"); ?>
+<?php require_once("../includes/functions.php");?>
 
-  /*  if(isset($_SESSION['email'])){
-        echo "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
 
-    }else{
-        header("Location: login.php");
-    }  */
-?>
 
 <!-- Känns som detta nedan skall ligga i header.php --> 
 

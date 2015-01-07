@@ -1,12 +1,12 @@
 <?php
-	//session_start();
-	$_SESSION['msg'] = "";
+	session_start();
+	$_SESSION['msg'] = null;
 
 //MARIES funktioner
     
-    function logged_in() {                  //används på alla sidor
-         if(isset($_SESSION['email'])) {
-            $output = "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
+    function logged_in() {                  //används på alla sidor 
+        if(isset($_SESSION['email'])) {
+            $output = $_SESSION['firstname']." ".$_SESSION['lastname']. ", ".$_SESSION['title']. " i klass " .$_SESSION['class'];
 
         }else{
             header("Location: login.php");
@@ -14,10 +14,10 @@
         return $output;
     }
 
-    function show_class($myClass) {         //används på minklass.php
-         try{
-            require_once("db_connect.php");
 
+    function show_class($myClass) {         //används på minklass.php
+        global $db;  
+        try{
             $query = "SELECT * FROM users WHERE class=:class AND title='Student' ORDER BY lastname ASC";
 
             $ps = $db->prepare($query);
@@ -52,10 +52,10 @@
         return $output; 
     }
 
-    function show_all_classes($myClass){    //används på minklass.php
-        try{
-            require_once("db_connect.php");
 
+    function show_all_classes($myClass){    //används på minklass.php
+        global $db; 
+        try{
             $query = "SELECT * FROM users WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14' AND title='Student' ORDER BY class, lastname ASC";
 
             $ps = $db->prepare($query);
