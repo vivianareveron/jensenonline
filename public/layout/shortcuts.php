@@ -17,9 +17,6 @@
                     <a href="minklass.php" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Min klass</span> </a>
                     </div>
                     <div>
-                    <a href="minauppgifter.php" class="shortcut"><i class="shortcut-icon icon-upload"></i><span class="shortcut-label">Mina uppgifter</span> </a>
-                    </div>
-                    <div>
                     <a href="franvaro.php" class="shortcut"><i class="shortcut-icon icon-ok-sign "></i><span class="shortcut-label">Anmäl frånvaro</span> </a>
                     </div>
                     <div>
