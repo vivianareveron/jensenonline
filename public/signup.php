@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $section = 'signup';
 
   /*  if(isset($_SESSION['email'])){
         echo "Välkommen " .$_SESSION['firstname']." ".$_SESSION['lastname']. ". Du är inloggad som ".$_SESSION['title']. " i klass " .$_SESSION['class']. ".";
