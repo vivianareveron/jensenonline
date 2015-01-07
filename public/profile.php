@@ -3,17 +3,16 @@
 <?php require_once("../includes/functions.php");?>
 <?php include("layout/header.php"); ?>
 
-<?php
-    echo logged_in();   //if-satsen ersatt av en funktion  
-?>
+
 
 <link href="css/pages/minprofil.css" rel="stylesheet">
 
     <div class="main">
     <div class="account-container">
         <div class="content clearfix">
-        <h1>Min profil</h1>
-    <p>Här kan du ändra dina uppgifter</p>
+            <h1>Min profil</h1>
+           <p> <?php echo logged_in();   //if-satsen ersatt av en funktion ?></p>     
+           <h4>Här kan du ändra dina uppgifter</h4>
 
 <?php
 //php for the first form, updating profile.
