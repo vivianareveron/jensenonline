@@ -3,7 +3,7 @@
 <?php include("layout/header.php"); ?>
 
 <?php
-    echo logged_in();   //if-satsen ersatt av en funktion
+    
     
     $pageTitle = "Min Klass";
     $section = "minkass";
@@ -19,6 +19,8 @@ $class = $_SESSION['class'];
 <div class="main">
   <div class="main-inner">
     <div class="container">
+        <h1>Min Klass</h1>
+        <?php echo logged_in(); //if-satsen ersatt av en funktion ?>  
         <div class="row">
             <div class="span9">  
                 <div class="widget widget-table action-table">
