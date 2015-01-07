@@ -11,7 +11,7 @@
  
     <div class="container">
 
-        <h1>Välkommen till Jensen Online</h1>
+        <h2>Välkommen till Jensen Online</h2>
         <?php echo logged_in(); ?>
 
 

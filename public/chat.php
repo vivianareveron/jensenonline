@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="span9">
-                        <h1>Chat</h1>
+                        <h2>Chat</h2>
                         <?php echo logged_in(); ?>
                     </div> <!--span9-->
                 </div> <!--row-->
