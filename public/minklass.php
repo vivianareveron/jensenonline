@@ -19,9 +19,14 @@ $class = $_SESSION['class'];
 <div class="main">
   <div class="main-inner">
     <div class="container">
-        <h2>Min Klass</h2>
-        <?php echo logged_in(); //if-satsen ersatt av en funktion ?>  
         <div class="row">
+            <div class="span12 headline">    
+                <h2>Min Klass</h2>
+                <?php echo logged_in(); //if-satsen ersatt av en funktion ?>  
+        </div> <!--span12--> 
+      </div> <!--row--> 
+          
+      <div class="row">
             <div class="span9">  
                 <div class="widget widget-table action-table">
                     <div class="widget-header"> <i class="icon-group"></i>

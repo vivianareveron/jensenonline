@@ -13,10 +13,10 @@
         <div class="main-inner">
             <div class="container">
                 <div class="row">
-                    <div class="span9">
+                    <div class="span12">
                         <h2>Chat</h2>
                         <?php echo logged_in(); ?>
-                    </div> <!--span9-->
+                    </div> <!--span12-->
                 </div> <!--row-->
             </div> <!--container-->
         </div> <!--main-inner-->

@@ -131,7 +131,7 @@ border-color: #236491;
 */
 
 .subnavbar {
-    	margin-bottom: 2.5em;
+    	margin-bottom: 1.5em;
     }
     
 .subnavbar-inner {
@@ -270,7 +270,9 @@ border-color: #236491;
 	
 }
 
-
+.headline{
+    padding-bottom: 1em;
+}
 
 /*------------------------------------------------------------------
 [5. Extra / .extra]
