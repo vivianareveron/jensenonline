@@ -83,6 +83,73 @@
         return $output;
     }
 
+    function show_courses($myClass) {         //används på minakurser.php
+        global $db;  
+        try{
+            $query = "SELECT * FROM courses WHERE class=:class";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(
+                array(
+                'class' => $myClass
+                ));
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+            $output = "<table class='table table-striped table-bordered'>";
+            $output .= "<thead>";
+            $output .= "<tr><th>Kurs</th><th>Status</th><th>Datum</th><th>Poäng</th></tr>";
+            $output .= "</head>"; 
+            $output .= "<tbody>";
+             
+        foreach($row as $r){
+            $output .= '<tr>';
+            $output .= '<td>' . $r['course'] .'</td>';
+            $output .= '<td>' . $r['status'] .'</td>';
+            $output .= '<td>' . $r['startdate'] .' / '. $r['enddate'] .'</td>';
+            $output .= '<td>' . $r['rating'] .'</td>';
+            }
+            $output .= '</tr>';
+            $output .= "</tbody>";
+            $output .= '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+             
+        }
+        return $output; 
+    }
+
+    function show_all_courses($myClass){    //används på minakurser.php
+        global $db; 
+        try{
+            $query = "SELECT * FROM courses WHERE class='CBK14' OR class='IPK14' OR class='PTK14' OR class='WUK14'";
+
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array());
+
+            $row = $ps->fetchAll(PDO::FETCH_ASSOC);
+            $output = "<table class='table table-striped table-bordered'>";
+            $output .= "<tr><th>Klass</th><th>Kurs</th><th>Status</th><th>Datum</th><th>Poäng</th></tr>";
+            
+        foreach($row as $r){
+            $output .= '<tr>';
+            $output .= '<td>' . $r['class'] .'</td>';
+            $output .= '<td>' . $r['course'] .'</td>';
+            $output .= '<td>' . $r['status'] .'</td>';
+            $output .= '<td>' . $r['startdate'] .' / '. $r['enddate'] .'</td>';
+            $output .= '<td>' . $r['rating'] .'</td>';
+            }
+            $output .= '</tr>';
+            $output .= '</table><br />';
+     
+        } catch(Exception $exception) {
+            echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
+        return $output;
+    }
+
 
 
 //SIBARS funktioner
