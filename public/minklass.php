@@ -22,7 +22,7 @@ $title = $_SESSION['title'];
     <div class="container">
         <div class="row">
             <div class="span12 headline">    
-                <h2>Min Klass</h2>
+                <h2>Klasslista</h2>
                 <?php echo logged_in(); //if-satsen ersatt av en funktion ?>  
         </div> <!--span12--> 
       </div> <!--row--> 

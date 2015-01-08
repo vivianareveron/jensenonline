@@ -200,9 +200,7 @@
      </form>
 <br />
 <br />
-        <div class="login-extra">
-<a href="frontpage.php">Back to start page</a>
-            </div> <!-- class login-extra -->
+        
     </div> <!-- class content clearfix -->
  </div> <!--class container --> 
 </div> <!-- class main-->
