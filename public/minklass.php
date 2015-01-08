@@ -14,6 +14,7 @@
 
 <?php
 $class = $_SESSION['class'];
+$title = $_SESSION['title'];
 ?>
     
 <div class="main">
@@ -51,10 +52,39 @@ $class = $_SESSION['class'];
                 <!-- /widget -->
             </div>
             <!-- /span12-->
-            
-<?php
-        include("layout/shortcuts.php");
-?>
+          
+<!-- Start of Admin shortcuts -->  
+<?php if($title == 'Admin'): ?>         
+    <div class="span3">
+              <div class="widget">
+                <div class="widget-header"> <i class="icon-bookmark"></i>
+                  <h3>Admin</h3>
+                </div>
+                <!-- /widget-header -->
+                <div class="widget-content">
+
+                    <div class="shortcuts">
+                        <div> 
+                            <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Signup new user</span> </a>
+                        </div>
+                        <div>    
+                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change user</span> </a>
+                        </div>
+                        <div>
+                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete user</span> </a>
+                        </div>
+
+                </div>
+             <!-- /shortcuts-->    
+                </div>
+                <!-- /widget-content --> 
+              </div>
+              <!-- /widget -->
+            </div> 
+            <!-- /span3 -->
+<?php endif; ?>
+<!-- End of Admin shortcuts -->       
+          
         </div>
         <!-- /row -->  
     </div>
