@@ -25,7 +25,6 @@
     $email = $_SESSION['email'];
     $phone = $_SESSION['phone'];
     $mobile = $_SESSION['mobile'];
-    $workphone = $_SESSION['workphone'];
     $skype = $_SESSION['skype'];
 
 
@@ -38,13 +37,12 @@
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $mobile = $_POST['mobile'];
-        $workphone = $_POST['workphone'];
         $skype = $_POST['skype'];
 
     try{
         require_once("../includes/db_connect.php"); 
             $query = "UPDATE users ";
-            $query .= "SET address = :address, postnumber = :postnumber, postaddress = :postaddress, email = :email, phone = :phone, mobile = :mobile, workphone = :workphone, skype = :skype ";
+            $query .= "SET address = :address, postnumber = :postnumber, postaddress = :postaddress, email = :email, phone = :phone, mobile = :mobile, skype = :skype ";
             $query .= "WHERE id = :id"; 
 
             $ps = $db->prepare($query); 
@@ -56,7 +54,6 @@
                     'email'=>$email,
                     'phone'=>$phone,
                     'mobile'=>$mobile,
-                    'workphone'=>$workphone,
                     'skype'=>$skype,
                     'id'=>$_SESSION['id']
                     ));
@@ -153,16 +150,12 @@
                 <td class="field"><input type="text" name="email" id="username" value=<?php echo $email;?> /></td>
             </tr>
             <tr class= "login-fields">
-                <td>Hemtelefon: </td>
+                <td>Telefon: </td>
                 <td class="field"><input type="text" name="phone" id="username"value=<?php echo $phone;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Mobil: </td>
                 <td class="field"><input type="text" name="mobile" id="username" value=<?php echo $mobile;?> /></td>
-            </tr>
-            <tr class= "login-fields">
-                <td>Arbetstelefon: </td>
-                <td class="field"><input type="text" name="workphone"  id="username" value=<?php echo $workphone;?> /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Skype: </td>

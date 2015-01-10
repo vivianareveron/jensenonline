@@ -14,7 +14,7 @@
     <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
 
 <?php
-    $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $workphone = $skype = $username = $password = $re_password = "" ;
+    $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $username = $password = $re_password = "" ;
 	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $userErr = $passErr = $rePassErr = "";
 
 //Om användaren trycker på "Sign up"-knappen
@@ -31,8 +31,6 @@ if(isset($_POST["submit"])){
 		$phone        = trim($_POST["phone"]);	
 		$mobile       = trim($_POST["mobile"]);
         $workphone    = trim($_POST["workphone"]);
-		$skype        = trim($_POST["skype"]);	
-        $username     = trim($_POST["username"]);
 		$password     = trim($_POST["password"]);
         $re_password  = trim($_POST["re_password"]);
 	
@@ -103,8 +101,8 @@ if(isset($_POST["submit"])){
 		try{
         require_once("../includes/db_connect.php");
 
-            $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, workphone, skype, username, password) ";
-            $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :workphone, :skype, :username, :password) ";
+            $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, username, password) ";
+            $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :username, :password) ";
 
             $ps = $db->prepare($query); //prepared statement
             $result = $ps->execute(array(
@@ -118,8 +116,6 @@ if(isset($_POST["submit"])){
                 'email'=>$email, 
                 'phone'=>$phone,
                 'mobile'=>$mobile,
-                'workphone'=>$workphone, 
-                'skype'=>$skype,
                 'username'=>$username,
                 'password'=>$password,
             ));
@@ -201,14 +197,6 @@ if(isset($_POST["submit"])){
             <tr>
                 <td>Mobil </td>
                 <td><input type="text" name="mobile" value="<?php echo $mobile; ?>"/></td>
-            </tr>
-            <tr>
-                <td>Arbetstelefon </td>
-                <td><input type="text" name="workphone" value="<?php echo $workphone; ?>"/></td>
-            </tr>
-            <tr>
-                <td>Skype </td>
-                <td><input type="text" name="skype" value="<?php echo $skype; ?>"/></td>
             </tr>
             <tr>
                 <td>Username </td>
