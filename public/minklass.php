@@ -51,7 +51,7 @@ $title = $_SESSION['title'];
                 </div>
                 <!-- /widget -->
             </div>
-            <!-- /span12-->
+            <!-- /span9-->
           
 <!-- Start of Admin shortcuts -->  
 <?php if($title == 'Admin'): ?>         
@@ -68,10 +68,10 @@ $title = $_SESSION['title'];
                             <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Signup new user</span> </a>
                         </div>
                         <div>    
-                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change user</span> </a>
+                        <a href="search.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change user</span> </a>
                         </div>
                         <div>
-                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete user</span> </a>
+                        <a href="search.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete user</span> </a>
                         </div>
 
                 </div>
