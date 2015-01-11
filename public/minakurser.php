@@ -68,10 +68,10 @@ $title = $_SESSION['title'];
                             <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Put up new course</span> </a>
                         </div>
                         <div>    
-                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change course</span> </a>
+                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change course</span> </a>
                         </div>
                         <div>
-                        <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete course</span> </a>
+                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete course</span> </a>
                         </div>
 
                 </div>
