@@ -57,7 +57,7 @@ $title = $_SESSION['title'];
 <?php if($title == 'Admin'): ?>         
     <div class="span3">
               <div class="widget">
-                <div class="widget-header"> <i class="icon-bookmark"></i>
+                <div class="widget-header"> <i class="icon-wrench"></i>
                   <h3>Admin</h3>
                 </div>
                 <!-- /widget-header -->
@@ -65,13 +65,13 @@ $title = $_SESSION['title'];
 
                     <div class="shortcuts">
                         <div> 
-                            <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Put up new course</span> </a>
+                            <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Lägg till kurs</span> </a>
                         </div>
                         <div>    
-                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Change course</span> </a>
+                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Redigera kurs</span> </a>
                         </div>
                         <div>
-                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i> <span class="shortcut-label">Delete course</span> </a>
+                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-remove"></i> <span class="shortcut-label">Radera kurs</span> </a>
                         </div>
 
                 </div>
