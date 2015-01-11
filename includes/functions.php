@@ -150,6 +150,128 @@
         return $output;
     }
 
+//Meddelanden
+
+//***Add
+
+function add_post(){
+    if(isset($_POST['submit'])){
+        global $db;
+        try{
+        
+            $headline = $_POST['headline'];
+            $content = $_POST['content'];
+            $author = logged_in();
+        
+            $query = "INSERT INTO posts (headline, content, author) ";
+            $query .= "VALUES (:headline, :content, :author)";
+        
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array(
+                'headline' => $headline,
+                'content' => $content,
+                'author' => $author
+        
+            ));
+        
+            if($result){
+                echo "New post created";
+            }else{
+                echo "Couldn't create new post";
+                }
+            }catch(Exception $exception){
+                echo "Query failed";
+                echo $exception;
+            }
+
+    }
+
+}
+//***Edit (Doesn't work)
+
+function edit_post(){
+    global $db;
+    if(isset($_POST['edit'])){
+        try{
+        
+            $headline = $_POST['headline'];
+            $content = $_POST['content'];
+        
+            $query = "INSERT INTO posts (headline, content, author) ";
+            $query .= "VALUES (:headline, :content, :author)";
+        
+            $ps = $db->prepare($query);
+            $result = $ps->execute(array(
+                'headline' => $headline,
+                'content' => $content,
+                'author' => $username
+            ));
+        
+            if($result){
+                echo "New post created";
+            }else{
+                echo "Couldn't create new post";
+            }
+        }catch(Exception $exception){
+            echo "Query failed";
+            echo $exception;
+        }
+
+    }
+}
+
+//***Delete (Doesn't work)
+
+function delete_post(){
+    global $db;
+    $id = '';
+
+    if(isset($_POST['delete'.$id])){
+        try{        
+        $query = "DELETE FROM posts ";
+        $query .= "WHERE id = :id";   
+    
+        $ps = $db->prepare($query);
+        $result = $ps->execute(array(
+            'id' => $id));
+           
+
+        }catch(Exception $exception){}
+    }
+}
+    
+//***Show list
+
+function show_all_posts() {    
+    global $db;
+    try{
+        $id = $headline = $author = $content = $date = ''; 
+        
+        $query = "SELECT * FROM posts ";
+        
+        $ps = $db->prepare($query);
+        
+        $result = $ps->execute();
+        
+        $posts = $ps->fetchAll();
+        
+      
+    }catch(Exception $exception){
+        echo "Query failed";
+        echo $exception;
+    }
+    
+    foreach ($posts as $p){
+        echo "<li>";
+        echo "<div>" . $p['date'] . "</div><div>" . $p['author']. "</div><div>" . $p['headline']. "</div><div>" . $p['content']. "</div>";
+    
+        echo "<div><input type='submit' value='Edit' name='edit.$id' /></div>";
+        echo "<div><input type='submit' value='Delete' name='delete'/></div>";
+        echo "</li>";
+   
+    }
+}
+
 
 //SIBARS funktioner
 
