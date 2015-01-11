@@ -5,7 +5,7 @@
             <div class="container">
                 <ul> 
                     <li class="<?php if($section == "dashboard") {echo "active";} ?>"><a href="frontpage.php"><i class="icon-dashboard"></i><br><span>Dashboard</span></a> </li>
-                    <li class="<?php if($section == "minakurser") {echo "active";} ?>"><a href="minakurser.php"><i class="icon-list-alt"></i><br><span>Mina kurser</span> </a> </li>
+                    <li class="<?php if($section == "minakurser") {echo "active";} ?>"><a href="minakurser.php"><i class="icon-list-alt"></i><br><span>Kurslista</span> </a> </li>
                     <li class="<?php if($section == "meddelanden") {echo "active";} ?>"><a href="meddelanden.php"><i class="icon-envelope"></i><br><span>Meddelanden</span> </a></li>
                     <li class="<?php if($section == "minklass") {echo "active";} ?>"><a href="minklass.php"><i class="icon-group"></i><br><span>Klasslista</span> </a> </li>
                     <li class="<?php if($section == "chat") {echo "active";} ?>"><a href="chat.php"><i class="icon-comment"></i><br><span>Chat</span> </a> </li>  

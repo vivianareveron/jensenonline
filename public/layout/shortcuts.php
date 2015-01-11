@@ -8,7 +8,7 @@
            
                 <div class="shortcuts">
                     <div> 
-                        <a href="minakurser.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Mina kurser</span> </a>
+                        <a href="minakurser.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Kurslista</span> </a>
                     </div>
                     <div>    
                     <a href="meddelanden.php" class="shortcut"><i class="shortcut-icon icon-envelope"></i><span class="shortcut-label">Meddelanden</span> </a>
