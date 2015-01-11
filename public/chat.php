@@ -1,11 +1,12 @@
-<?php require_once("../includes/db_connect.php"); ?>
-<?php require_once("../includes/functions.php");?>
-<?php include("layout/header.php"); ?>
-
 <?php
     $pageTitle = "Chat";
     $section = "chat";
 ?>
+
+<?php require_once("../includes/db_connect.php"); ?>
+<?php require_once("../includes/functions.php");?>
+<?php include("layout/header.php"); ?>
+
 <link href="css/pages/chat.css" rel="stylesheet">
 
 <main> 

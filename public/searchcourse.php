@@ -1,3 +1,8 @@
+<?php
+    $pageTitle = "Search Course";
+    $section = "search";
+?>
+
 <?php require_once("../includes/db_connect.php"); ?>
 <?php require_once("../includes/functions.php");?>
 <?php include("layout/header.php"); ?>

@@ -1,11 +1,13 @@
-<?php require_once("../includes/db_connect.php"); ?>
-<?php require_once("../includes/functions.php");?>
-<?php include("layout/header.php"); ?>
-
 <?php
     $pageTitle = "Meddelanden";
     $section = "meddelanden";
 ?>
+
+<?php require_once("../includes/db_connect.php"); ?>
+<?php require_once("../includes/functions.php");?>
+<?php include("layout/header.php"); ?>
+
+
 <link href="css/pages/meddelanden.css" rel="stylesheet">
 
 <main> 

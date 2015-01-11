@@ -1,9 +1,11 @@
+<?php
+    $pageTitle = "Min profil";
+    $section = "profil";
+?>
 
 <?php require_once("../includes/db_connect.php"); ?>
 <?php require_once("../includes/functions.php");?>
 <?php include("layout/header.php"); ?>
-
-
 
 <link href="css/pages/minprofil.css" rel="stylesheet">
 

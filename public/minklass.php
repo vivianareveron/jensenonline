@@ -1,13 +1,13 @@
+<?php 
+    $pageTitle = "Klasslista";
+    $section = "minklass";
+?>
+
 <?php require_once("../includes/db_connect.php"); ?>
 <?php require_once("../includes/functions.php");?>
 <?php include("layout/header.php"); ?>
 
-<?php
-    
-    
-    $pageTitle = "Min Klass";
-    $section = "minkass";
-?>
+
 <link href="css/pages/minklass.css" rel="stylesheet">
 
 <main> 
