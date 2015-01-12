@@ -29,16 +29,16 @@
 ?>
                
                 <div class="row">
-                    <div class="span 9">
+                    <div class="span9">
                     <form action="meddelanden.php" method="POST">
 	                   <table>
 	                       <tr>
 		                      <td>Headline:</td> 
-		                      <td><input type="text-field" id="headline" name="headline"/><span class="error"> * <?php echo $headlineErr; ?></span></td>
+		                      <td><input type="text-field" id="headline" name="headline" class='span6'/><span class="error"> * <?php echo $headlineErr; ?></span></td>
 	                       </tr>
         	               <tr>
 		                      <td>Content:</td> 
-		                      <td><input type="text-field" id="content" name="content"/><span class="error"> * <?php echo $contentErr; ?></span</td>
+		                      <td><textarea id="content" name="content" class="form-control span9" rows="20"></textarea><span class="error"> * <?php echo $contentErr; ?></span</td>
 	                       </tr>
 	                       <tr>
 		                      <td><input type="submit" value="Submit" name="submit" class="button btn btn-success btn-large"/></td>
@@ -49,9 +49,7 @@
                 </div> <!--span 9-->
                 </div> <!--row-->    
 
-<?php echo edit_post();
-echo delete_post(); ?> 
-                
+
                     <div class="row">
                     <div class="span9">
                         <div class="widget widget-nopad">
@@ -67,8 +65,8 @@ echo delete_post(); ?>
         </div> <!--main-inner-->
     </div> <!--main-->
         
-    
-    
+<?php echo edit_post();
+echo delete_post(); ?> 
 
 </main>
     

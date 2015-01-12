@@ -206,7 +206,7 @@ function add_post(){
 
 function edit_post(){
     global $db;
-    if(isset($_POST['edit'])){
+    if(isset($_POST['edit$i'])){
         try{
         
             $headline = $_POST['headline'];
@@ -240,11 +240,13 @@ function edit_post(){
 function delete_post(){
     global $db;
     $id = '';
-
-    if(isset($_POST['delete'])){
+    $deleteButton = $_POST['delete'];
+    $deleteButton .= $i;
+    
+    if(isset ($deleteButton)){
         try{        
         $query = "DELETE FROM posts ";
-        $query .= "WHERE $this.id = :id";   
+        $query .= "WHERE id = :id";   
     
         $ps = $db->prepare($query);
         $result = $ps->execute(array(
@@ -255,7 +257,7 @@ function delete_post(){
         echo "Query failed, see error message below: <br /><br />";
             echo $exception. "<br /> <br />";
         }
-    }
+    } 
 }
     
 //***Show list
@@ -275,15 +277,17 @@ function show_all_posts() {
         
         $output = "<ul class='news-items'>";
         
+        $i = '';
         foreach ($posts as $p){
             $output .= "<li>";
             $output .= "<div>" . $p['date'] . "</div>";
             $output .= "<div>" . $p['author']. "</div>";
             $output .= "<div>" . $p['headline']. "</div>";
             $output .= "<div>" . $p['content']. "</div>";
-            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit.$id' id='delete'/></div>";
-            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete' id='delete'/></div>";
+            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/></div>";
+            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete$i' id='delete$i'/></div>";
             $output .= "</li>";
+            $i++;
         }
         
         $output .= "</ul>";

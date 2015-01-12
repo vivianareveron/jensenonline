@@ -1,4 +1,3 @@
-
 @media all and (max-width: 950px) and (min-width: 1px) {
 	
 	#big_stats {
@@ -69,4 +68,7 @@
 		width: 48%;
 	}
 }
+/**My additions**/
 
+#content{
+}
