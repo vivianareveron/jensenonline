@@ -279,13 +279,13 @@ function show_all_posts() {
         
         $i = '';
         foreach ($posts as $p){
-            $output .= "<li>";
-            $output .= "<div>" . $p['date'] . "</div>";
-            $output .= "<div>" . $p['author']. "</div>";
-            $output .= "<div>" . $p['headline']. "</div>";
-            $output .= "<div>" . $p['content']. "</div>";
-            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/></div>";
-            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete$i' id='delete$i'/></div>";
+            $output .= "<li class='widget-content'>";
+            $output .= "<div><p>" . $p['date'] . "</p></div>";
+            $output .= "<div>" . $p['author']. "</p></div>";
+            $output .= "<div><h3>" . $p['headline']. "</h3></div>";
+            $output .= "<div><p>" . $p['content']. "</p></div>";
+            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/>";
+            $output .= "<input type='submit' value='Delete' class='button btn btn-success' name='delete$i' id='delete$i'/></div>";
             $output .= "</li>";
             $i++;
         }

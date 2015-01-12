@@ -52,15 +52,9 @@
 
                     <div class="row">
                     <div class="span9">
-                        <div class="widget widget-nopad">
-                            <div class="widget-content">
-                                    
+                       
                                     <?php echo show_all_posts();?>           
                                 
-                            </div> <!--widget content-->
-                        </div> <!--widget-->
-                    </div> <!--span 9-->
-                </div> <!--row-->       
             </div> <!--container-->
         </div> <!--main-inner-->
     </div> <!--main-->

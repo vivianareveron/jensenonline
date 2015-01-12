@@ -70,5 +70,15 @@
 }
 /**My additions**/
 
-#content{
+p{
+color: #777;
+}
+
+li{
+list-style-type: none;
+margin-bottom: 20px;    
+}
+
+#edit{
+margin-right: 5px;
 }

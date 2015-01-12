@@ -30,7 +30,6 @@
     $skype = $_SESSION['skype'];
 
 
-
     if(isset($_POST["update"])) {
 
         $address = $_POST['address'];
@@ -129,39 +128,39 @@
         <table class="table">
             <tr class= "login-fields">
                 <td>Förnamn: </td>
-                <td class="field"><input type="text" readonly="" name="firstname"  id="username" value=<?php echo $firstname;?> /></td>
+                <td class="field"><input type="text" readonly="" name="firstname"  id="username" value="<?php echo $firstname;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Efternamn: </td>
-                <td class="field"><input type="text" readonly="" name="lastname" class="login username-field" id="username"value=<?php echo $lastname;?> /></td>
+                <td class="field"><input type="text" readonly="" name="lastname" class="login username-field" id="username"value="<?php echo $lastname;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Adress: </td>
-                <td class="field"><input type="text" name="address"  id="username" value=<?php echo $address;?> /></td>
+                <td class="field"><input type="text" name="address"  id="username" value="<?php echo $address;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Postnummer: </td>
-                <td class="field"><input type="text" name="postnumber" id="username" value=<?php echo $postnumber;?> /></td>
+                <td class="field"><input type="text" name="postnumber" id="username" value="<?php echo $postnumber;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Postadress: </td>
-                <td class="field"><input type="text" name="postaddress" id="username" value=<?php echo $postaddress;?> /></td>
+                <td class="field"><input type="text" name="postaddress" id="username" value="<?php echo $postaddress;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>E-post: </td>
-                <td class="field"><input type="text" name="email" id="username" value=<?php echo $email;?> /></td>
+                <td class="field"><input type="text" name="email" id="username" value="<?php echo $email;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Telefon: </td>
-                <td class="field"><input type="text" name="phone" id="username"value=<?php echo $phone;?> /></td>
+                <td class="field"><input type="text" name="phone" id="username"value="<?php echo $phone;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Mobil: </td>
-                <td class="field"><input type="text" name="mobile" id="username" value=<?php echo $mobile;?> /></td>
+                <td class="field"><input type="text" name="mobile" id="username" value="<?php echo $mobile;?>" /></td>
             </tr>
             <tr class= "login-fields">
                 <td>Skype: </td>
-                <td class="field"><input type="text" name="skype" id="username" value=<?php echo $skype;?> /></td>
+                <td class="field"><input type="text" name="skype" id="username" value="<?php echo $skype;?>" /></td>
             </tr>
             <tr>
                 
