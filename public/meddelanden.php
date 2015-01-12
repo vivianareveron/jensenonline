@@ -50,12 +50,11 @@
                     <div class="span9">
                         <div class="widget widget-nopad">
                             <div class="widget-content">
-                                <ul class="news-items">
                                     
                                     <?php echo edit_post();
                                           echo delete_post();
                                           echo show_all_posts();?>           
-                                </ul>
+                                
                             </div> <!--widget content-->
                         </div> <!--widget-->
                     </div> <!--span 9-->

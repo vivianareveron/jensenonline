@@ -255,22 +255,30 @@ function show_all_posts() {
         
         $posts = $ps->fetchAll();
         
-      
-    }catch(Exception $exception){
+        $output = "<ul class='news-items'>";
+        
+        foreach ($posts as $p){
+            $output .= "<li>";
+            $output .= "<div>" . $p['date'] . "</div>";
+            $output .= "<div>" . $p['author']. "</div>";
+            $output .= "<div>" . $p['headline']. "</div>";
+            $output .= "<div>" . $p['content']. "</div>";
+            $output .= "<div><input type='submit' value='Edit' name='edit.$id' /></div>";
+            $output .= "<div><input type='submit' value='Delete' name='delete'/></div>";
+            $output .= "</li>";
+   
+        }
+        
+        $output .= "</ul>";
+        
+     }catch(Exception $exception){
         echo "Query failed";
         echo $exception;
     }
-    
-    foreach ($posts as $p){
-        echo "<li>";
-        echo "<div>" . $p['date'] . "</div><div>" . $p['author']. "</div><div>" . $p['headline']. "</div><div>" . $p['content']. "</div>";
-    
-        echo "<div><input type='submit' value='Edit' name='edit.$id' /></div>";
-        echo "<div><input type='submit' value='Delete' name='delete'/></div>";
-        echo "</li>";
-   
-    }
+    return $output;
 }
+
+
 
 
 //SIBARS funktioner
