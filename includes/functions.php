@@ -155,22 +155,36 @@
 //***Add
 
 function add_post(){
+    
+    $headlineErr = $contentErr = '';
+    
     if(isset($_POST['submit'])){
+        
         global $db;
-        try{
+        $headline = $_POST['headline'];
+        $content = $_POST['content'];
         
-            $headline = $_POST['headline'];
-            $content = $_POST['content'];
-            $author = logged_in();
+        if (empty($headline)) {
+			$headlineErr = "Headline is required";
+		}
         
-            $query = "INSERT INTO posts (headline, content, author) ";
-            $query .= "VALUES (:headline, :content, :author)";
+        if (empty($content)) {
+			$contentErr = "Content is required";
+		}
         
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array(
-                'headline' => $headline,
-                'content' => $content,
-                'author' => $author
+        if (empty($headlineErr || $contentErr)) {
+        
+            try{    
+                $author = logged_in();
+        
+                $query = "INSERT INTO posts (headline, content, author) ";
+                $query .= "VALUES (:headline, :content, :author)";
+        
+                $ps = $db->prepare($query);
+                $result = $ps->execute(array(
+                    'headline' => $headline,
+                    'content' => $content,
+                    'author' => $author
         
             ));
         
@@ -183,9 +197,10 @@ function add_post(){
                 echo "Query failed";
                 echo $exception;
             }
-
+        }
+        
     }
-
+    return $headlineErr . $contentErr;  
 }
 //***Edit (Doesn't work)
 
@@ -226,17 +241,20 @@ function delete_post(){
     global $db;
     $id = '';
 
-    if(isset($_POST['delete'.$id])){
+    if(isset($_POST['delete'])){
         try{        
         $query = "DELETE FROM posts ";
-        $query .= "WHERE id = :id";   
+        $query .= "WHERE $this.id = :id";   
     
         $ps = $db->prepare($query);
         $result = $ps->execute(array(
             'id' => $id));
            
 
-        }catch(Exception $exception){}
+        }catch(Exception $exception){
+        echo "Query failed, see error message below: <br /><br />";
+            echo $exception. "<br /> <br />";
+        }
     }
 }
     
@@ -263,8 +281,8 @@ function show_all_posts() {
             $output .= "<div>" . $p['author']. "</div>";
             $output .= "<div>" . $p['headline']. "</div>";
             $output .= "<div>" . $p['content']. "</div>";
-            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit.$id' /></div>";
-            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete'/></div>";
+            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit.$id' id='delete'/></div>";
+            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete' id='delete'/></div>";
             $output .= "</li>";
         }
         
