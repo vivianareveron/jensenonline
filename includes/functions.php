@@ -263,10 +263,9 @@ function show_all_posts() {
             $output .= "<div>" . $p['author']. "</div>";
             $output .= "<div>" . $p['headline']. "</div>";
             $output .= "<div>" . $p['content']. "</div>";
-            $output .= "<div><input type='submit' value='Edit' name='edit.$id' /></div>";
-            $output .= "<div><input type='submit' value='Delete' name='delete'/></div>";
+            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit.$id' /></div>";
+            $output .= "<div><input type='submit' value='Delete' class='button btn btn-success' name='delete'/></div>";
             $output .= "</li>";
-   
         }
         
         $output .= "</ul>";

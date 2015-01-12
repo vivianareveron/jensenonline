@@ -38,8 +38,8 @@
 	</tr>
 	<tr>
 		
-		<td><input type="submit" value="Submit" name="submit" /></td>
-		<td><input type="reset" value="Reset" name="reset" /></td>
+		<td><input type="submit" value="Submit" name="submit" class="button btn btn-success btn-large" /></td>
+		<td><input type="reset" value="Reset" name="reset" class="button btn btn-success btn-large" /></td>
 	</tr>
 	</table>
 </form>
