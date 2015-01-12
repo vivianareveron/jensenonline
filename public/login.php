@@ -35,6 +35,9 @@
 <?php
 
 if(isset($_POST["submit"])) {
+    //för den kommande hashen
+    $username = $password = $hashedPass =  "";
+    //slut hash
     
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);

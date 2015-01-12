@@ -35,7 +35,7 @@ if(isset($_POST["submit"])){
 		$email 	      = trim($_POST["email"]);
 		$phone        = trim($_POST["phone"]);	
 		$mobile       = trim($_POST["mobile"]);
-        $workphone    = trim($_POST["workphone"]);
+        $username    = trim($_POST["username"]);
 		$password     = trim($_POST["password"]);
         $re_password  = trim($_POST["re_password"]);
 	
@@ -72,6 +72,7 @@ if(isset($_POST["submit"])){
     
         try{
             require_once("../includes/db_connect.php");
+            
 
             $query = "SELECT * ";
             $query .= "FROM users ";
@@ -93,6 +94,15 @@ if(isset($_POST["submit"])){
 
                     } 
                 } 
+                if($email){	
+                    if ($result ['email']== $email) {
+
+                        $_SESSION["email"] = $result['email'];
+
+                    $emailErr = "Email already exist. Please create a new email.<br /><br />";
+
+                    } 
+                } 
 
         } catch(Exception $exception) {
             echo "Query failed, see error message below: <br /><br />";
@@ -101,10 +111,16 @@ if(isset($_POST["submit"])){
 
 	    
         if(empty($titleErr) && empty($classErr) && empty($firstErr) && empty($lastErr) && empty($emailErr) && empty($userErr) && empty($passErr) && empty($rePassErr)){
-                echo "It is validated. You are ready for some DB statements now"; 
-		
+                 
 		try{
         require_once("../includes/db_connect.php");
+            //här gör vi hashade passwords
+            $options = [
+			'cost' => 12,			
+            ];
+
+            $hashedPass = password_hash($password, PASSWORD_BCRYPT, $options); 
+            //slut hash 
 
             $query = "INSERT INTO users (title, class, firstname, lastname, address, postnumber, postaddress, email, phone, mobile, username, password) ";
             $query .= "VALUES (:title, :class, :firstname, :lastname, :address, :postnumber, :postaddress, :email, :phone, :mobile, :username, :password) ";
@@ -122,11 +138,12 @@ if(isset($_POST["submit"])){
                 'phone'=>$phone,
                 'mobile'=>$mobile,
                 'username'=>$username,
-                'password'=>$password,
+                'password'=>$hashedPass,//tidigare $password
             ));
 
                 if ($result) {
-                header("Location: login.php");
+                    echo "Signup succeeded";
+                //header("Location: login.php");
             }else {
                  echo "Signup failed";
             }
@@ -136,8 +153,11 @@ if(isset($_POST["submit"])){
             echo $exception. "<br /> <br />";
         }
 
-        $user = $ps->fetch(PDO::FETCH_ASSOC); //associative array
-       }
+    //$user = $ps->fetch(PDO::FETCH_ASSOC); //associative array
+    //denna ovan failade när jag bytte header mot echo
+       }else {
+            $username = $password = $hashedPass =  "";
+        }
 
 	
 	}
