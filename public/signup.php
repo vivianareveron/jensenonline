@@ -21,6 +21,7 @@
 <?php
     $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $username = $password = $re_password = "" ;
 	$titleErr = $classErr = $firstErr = $lastErr = $emailErr = $userErr = $passErr = $rePassErr = "";
+$msg = "";
 
 //Om användaren trycker på "Sign up"-knappen
 if(isset($_POST["submit"])){								
@@ -142,10 +143,10 @@ if(isset($_POST["submit"])){
             ));
 
                 if ($result) {
-                    echo "Signup succeeded";
+                    $_SESSION['msg'] = "Signup succeeded";
                 //header("Location: login.php");
             }else {
-                 echo "Signup failed";
+                 $_SESSION['msg'] = "Signup failed";
             }
 
         } catch(Exception $exception) {
@@ -236,6 +237,7 @@ if(isset($_POST["submit"])){
 			<td><input type="password" name="re_password" /><span class="error"> * <?php echo $rePassErr; ?></span></td>
 		</tr>
 
+<?php echo $_SESSION['msg']; ?><br /><br />
             
             <tr>
                 <td><input type="submit" name="submit" value="Signup" /></td>
