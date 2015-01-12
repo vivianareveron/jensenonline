@@ -5,9 +5,9 @@
             <div class="container">
                 <ul> 
                     <li class="<?php if($section == "dashboard") {echo "active";} ?>"><a href="frontpage.php"><i class="icon-dashboard"></i><br><span>Dashboard</span></a> </li>
-                    <li class="<?php if($section == "minakurser") {echo "active";} ?>"><a href="minakurser.php"><i class="icon-list-alt"></i><br><span>Kurslista</span> </a> </li>
+                    <li class="<?php if($section == "minakurser") {echo "active";} ?>"><a href="minakurser.php"><i class="icon-list-alt"></i><br><span>Mina Kurs</span> </a> </li>
                     <li class="<?php if($section == "meddelanden") {echo "active";} ?>"><a href="meddelanden.php"><i class="icon-envelope"></i><br><span>Meddelanden</span> </a></li>
-                    <li class="<?php if($section == "minklass") {echo "active";} ?>"><a href="minklass.php"><i class="icon-group"></i><br><span>Klasslista</span> </a> </li>
+                    <li class="<?php if($section == "minklass") {echo "active";} ?>"><a href="minklass.php"><i class="icon-group"></i><br><span>Mina Klass</span> </a> </li>
                     <li class="<?php if($section == "chat") {echo "active";} ?>"><a href="chat.php"><i class="icon-comment"></i><br><span>Chat</span> </a> </li>  
                     <li class="<?php if($section == "franvaro") {echo "active";} ?>"><a href="franvaro.php" > <i class="icon-ok-sign"></i><br><span>Frånvaro</span> </a> </li>
                         </ul>   

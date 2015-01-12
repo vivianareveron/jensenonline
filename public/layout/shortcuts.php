@@ -8,13 +8,13 @@
            
                 <div class="shortcuts">
                     <div> 
-                        <a href="minakurser.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Kurslista</span> </a>
+                        <a href="minakurser.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Mina Kurs</span> </a>
                     </div>
                     <div>    
                     <a href="meddelanden.php" class="shortcut"><i class="shortcut-icon icon-envelope"></i><span class="shortcut-label">Meddelanden</span> </a>
                     </div>
                     <div>
-                    <a href="minklass.php" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Klasslista</span> </a>
+                    <a href="minklass.php" class="shortcut"><i class="shortcut-icon icon-group"></i> <span class="shortcut-label">Mina Klass</span> </a>
                     </div>
                     <div>
                     <a href="franvaro.php" class="shortcut"><i class="shortcut-icon icon-ok-sign "></i><span class="shortcut-label">Anmäl frånvaro</span> </a>
