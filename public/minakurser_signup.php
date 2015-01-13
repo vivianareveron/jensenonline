@@ -14,8 +14,8 @@
     <div class="main">
     <div class="account-container">
         <div class="content clearfix">
-        <h1>Lägg till användare</h1>
-    <p>Lägg till nya elever, lärare och övrig personal i Jensen Online. </p>
+        <h1>Lägg till kurser</h1>
+    <p>Lägg till kurser i Jensen Online. </p>
     <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
 
 <?php
