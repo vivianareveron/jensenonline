@@ -219,7 +219,7 @@ function add_post(){
 
 function edit_post(){
     global $db;
-    if(isset($_POST['edit$i'])){
+    if(isset($_POST['edit'])){
         try{
         
             $headline = $_POST['headline'];
@@ -251,16 +251,14 @@ function edit_post(){
 //***Delete (Doesn't work)
 
 function delete_post(){
-    global $db;
-    $id = '';
-    $deleteButton = $_POST['delete'];
-    $deleteButton .= $i;
     
-    if(isset ($deleteButton)){
+    global $db;
+    
+        if(isset($_POST['delete'])){
+        $id = $_POST['id'];
         try{        
         $query = "DELETE FROM posts ";
-        $query .= "WHERE id = :id";   
-    
+        $query .= "WHERE id = :id";
         $ps = $db->prepare($query);
         $result = $ps->execute(array(
             'id' => $id));
@@ -270,13 +268,16 @@ function delete_post(){
         echo "Query failed, see error message below: <br /><br />";
             echo $exception. "<br /> <br />";
         }
-    } 
+    
+ }
 }
     
 //***Show list
 
 function show_all_posts() {    
+    
     global $db;
+    
     try{
         $id = $headline = $author = $content = $date = ''; 
         
@@ -290,16 +291,23 @@ function show_all_posts() {
         
         $output = "<ul class='news-items'>";
         
-        $i = '';
+        $i = 0;
         foreach ($posts as $p){
+            
+            $id = $p['id'];
+
             $output .= "<li class='widget-content'>";
+            $output .= "<form action='meddelanden.php' method='POST'>";
             $output .= "<div><p>" . $p['date'] . "</p></div>";
             $output .= "<div>" . $p['author']. "</p></div>";
             $output .= "<div><h3>" . $p['headline']. "</h3></div>";
             $output .= "<div><p>" . $p['content']. "</p></div>";
-            $output .= "<div><input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/>";
-            $output .= "<input type='submit' value='Delete' class='button btn btn-success' name='delete$i' id='delete$i'/></div>";
+            $output .= "<div>" . "<input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/>";
+            $output .= "<input type='submit' value='Delete' class='button btn btn-success' name='delete' id='delete'/>";
+            $output .= "<input type='hidden' name='id' id='id' value='$id'/></div>";
+             $output .= "</form>";
             $output .= "</li>";
+           
             $i++;
         }
         
@@ -309,6 +317,7 @@ function show_all_posts() {
         echo "Query failed";
         echo $exception;
     }
+
     return $output;
 }
 
