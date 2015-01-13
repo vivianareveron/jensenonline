@@ -282,6 +282,7 @@ function show_all_posts() {
         $id = $headline = $author = $content = $date = ''; 
         
         $query = "SELECT * FROM posts ";
+        $query .= "ORDER BY date DESC";
         
         $ps = $db->prepare($query);
         
