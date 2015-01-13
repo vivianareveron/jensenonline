@@ -62,7 +62,7 @@ $contentErr = $errors[1];
         </div> <!--main-inner-->
     </div> <!--main-->
         
-<?php edit_post(); delete_post();?> 
+<?php delete_post();?> 
 
 </main>
     

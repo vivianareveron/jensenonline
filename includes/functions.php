@@ -176,13 +176,6 @@ function add_post(){
             $headlineErr = "The headline can't be longer than 80 characters";
         }
         
-        if (!preg_match("/^[A-ZÅÄÖa-zåäö0-9]*$/", $headline)) {
-			$headlineErr = "Only letters and numbers are allowed"; 
-        }
-        
-        if (!preg_match("/^[A-ZÅÄÖa-zåäö0-9]*$/",$content)) {
-			$contentErr = "Only letters and numbers are allowed"; 
-        }
         if (empty($headlineErr || $contentErr)) {
         
             try{    
@@ -248,7 +241,7 @@ function edit_post(){
     }
 }
 
-//***Delete (Doesn't work)
+//***Delete
 
 function delete_post(){
     
@@ -303,7 +296,7 @@ function show_all_posts() {
             $output .= "<div>" . $p['author']. "</p></div>";
             $output .= "<div><h3>" . $p['headline']. "</h3></div>";
             $output .= "<div><p>" . $p['content']. "</p></div>";
-            $output .= "<div>" . "<input type='submit' value='Edit' class='button btn btn-success' name='edit' id='edit'/>";
+            $output .= "<div><a href='meddelandenn _edit.php?id=$id'<p class='button btn btn-success'>Edit</p> </a>";
             $output .= "<input type='submit' value='Delete' class='button btn btn-success' name='delete' id='delete'/>";
             $output .= "<input type='hidden' name='id' id='id' value='$id'/></div>";
              $output .= "</form>";
