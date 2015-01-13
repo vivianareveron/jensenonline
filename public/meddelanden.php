@@ -24,8 +24,11 @@
 
 
 <?php 
-    echo add_post(); 
-      
+
+ 
+$errors = add_post();
+$headlineErr = $errors[0];
+$contentErr = $errors[1];
 ?>
                
                 <div class="row">

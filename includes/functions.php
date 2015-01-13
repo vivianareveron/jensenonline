@@ -172,6 +172,17 @@ function add_post(){
 			$contentErr = "Content is required";
 		}
         
+        if(strlen($headline) > 80){
+            $headlineErr = "The headline can't be longer than 80 characters";
+        }
+        
+        if (!preg_match("/^[A-ZÅÄÖa-zåäö0-9]*$/", $headline)) {
+			$headlineErr = "Only letters and numbers are allowed"; 
+        }
+        
+        if (!preg_match("/^[A-ZÅÄÖa-zåäö0-9]*$/",$content)) {
+			$contentErr = "Only letters and numbers are allowed"; 
+        }
         if (empty($headlineErr || $contentErr)) {
         
             try{    
@@ -200,8 +211,10 @@ function add_post(){
         }
         
     }
-    return $headlineErr . $contentErr;  
+    $errors = array($headlineErr, $contentErr);  
+    return $errors;
 }
+        
 //***Edit (Doesn't work)
 
 function edit_post(){
