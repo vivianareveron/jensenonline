@@ -208,38 +208,9 @@ function add_post(){
     return $errors;
 }
         
-//***Edit (Doesn't work)
 
-function edit_post(){
-    global $db;
-    if(isset($_POST['edit'])){
-        try{
-        
-            $headline = $_POST['headline'];
-            $content = $_POST['content'];
-        
-            $query = "INSERT INTO posts (headline, content, author) ";
-            $query .= "VALUES (:headline, :content, :author)";
-        
-            $ps = $db->prepare($query);
-            $result = $ps->execute(array(
-                'headline' => $headline,
-                'content' => $content,
-                'author' => $username
-            ));
-        
-            if($result){
-                echo "New post created";
-            }else{
-                echo "Couldn't create new post";
-            }
-        }catch(Exception $exception){
-            echo "Query failed";
-            echo $exception;
-        }
+//***Edit is in meddelande_edit
 
-    }
-}
 
 //***Delete
 
@@ -296,7 +267,7 @@ function show_all_posts() {
             $output .= "<div>" . $p['author']. "</p></div>";
             $output .= "<div><h3>" . $p['headline']. "</h3></div>";
             $output .= "<div><p>" . $p['content']. "</p></div>";
-            $output .= "<div><a href='meddelandenn _edit.php?id=$id'<p class='button btn btn-success'>Edit</p> </a>";
+            $output .= "<div><a href='meddelanden_edit.php?id=$id'<p class='button btn btn-success' id='edit'>Edit</p> </a>";
             $output .= "<input type='submit' value='Delete' class='button btn btn-success' name='delete' id='delete'/>";
             $output .= "<input type='hidden' name='id' id='id' value='$id'/></div>";
              $output .= "</form>";
