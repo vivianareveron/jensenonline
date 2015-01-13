@@ -82,7 +82,8 @@ $class = $_SESSION['class'];
     
 		foreach($users as $user){
 			echo "<tr>";
-			echo "<td>". $user['class']. "</td><td>" .$user['course'] . "</td><td>" .$user['status'] . "</td><td>". $user['startdate']. "</td><td>". $user['enddate']. "</td><td><a href='minakurser_edit.php'>Edit /</a><a href='#'> Delete</a></td>";
+			echo "<td>". $user['class']. "</td><td>" .$user['course'] . "</td><td>" .$user['status'] . "</td><td>". $user['startdate']. "</td><td>". $user['enddate']. "</td><td><a href='minakurser_edit.php?id=" .$user['id']. "'>Edit /</a><a href='minakurser_delete.php?id=" .$user['id']. "'> Delete</a></td>";
+
 			echo "</tr>";
 		}
 ?>

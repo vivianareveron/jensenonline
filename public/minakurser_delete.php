@@ -13,9 +13,9 @@
     <div class="account-container">
         <div class="content clearfix">
             
-            <h1>Ändra kurs</h1>
+            <h1>Radera kurs</h1>
            <p> <?php echo logged_in();   //if-satsen ersatt av en funktion ?></p>     
-           <h4>Här kan du ändra kursuppgifter</h4>
+           <h4>Här kan du radera kurser</h4>
 
 
 <?php
@@ -46,46 +46,44 @@
             echo $exception. "<br /> <br />";
         }
     }
-  
- if(isset($_POST['update'])) {
-  
+
+    if (isset($_POST['delete'])){
+     
             $class = $_POST['class'];
             $course = $_POST['course'];
             $status = $_POST['status'];
             $startdate = $_POST['startdate'];
             $enddate = $_POST['enddate'];
             $id = $_POST['id'];
+    
+    try{
+        $query = "DELETE FROM courses ";
+        $query .= "WHERE id = :id";
 
-    try{  
-            $query = "UPDATE courses ";
-            $query .= "SET status = :status, startdate = :startdate, enddate = :enddate ";
-            $query .= "WHERE id = :id"; 
+        $ps = $db->prepare($query); 
+        $result = $ps->execute(
+            array(
+                'id'=>$id 
+            ));
+        
+            if ($result) {
+                echo "Course deleted";
+                header("Location: minakurser_delete.php?deleted=true");
 
-            $ps = $db->prepare($query); 
-            $result = $ps->execute(
-                array (
-                    'status'=>$status, 
-                    'startdate'=>$startdate, 
-                    'enddate'=>$enddate,
-                    'id'=>$id
-                    ));
-
-                if ($result) {
-                 echo "Course updated";
-                }else {
-                 echo "Failed ";
-                }
-
-        } catch(Exception $exception) {
-            echo "Query failed, see error message below: <br /><br />";
-            echo $exception. "<br /> <br />";
+        }else {
+             echo "Delete failed! <br /><br />";
         }
 
+    } catch(Exception $exception) {
+        echo "Query failed, see error message below: <br /><br />";
+        echo $exception. "<br /> <br />";
     }
+    
+}
 
 ?>
 
-    <form action="minakurser_edit.php" method="POST" >
+    <form action="minakurser_delete.php" method="POST" >
         <table class="table">
             <tr class= "login-fields">
                 <td>Klass: </td>
@@ -109,7 +107,7 @@
             </tr>
             <tr>
                 <input type='hidden' name='id' value=<?php echo $id;?> />
-                <td class="login-actions"><input type="submit" name="update" value="Uppdatera" class="button btn btn-success btn-large" /></td>
+                <td class="login-actions"><input type="submit" name="delete" value="Radera" class="button btn btn-success btn-large" /></td>
             </tr>
         
         </table>

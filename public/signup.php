@@ -46,8 +46,14 @@ if(isset($_POST["submit"])){
         if (empty($_POST["class"])) {
 			$classErr = "Class is required";
 		}
+        if (!preg_match("/^[A-Za-z åäöÅÄÖ ´`-]*$/",$firstname)) {
+			$firstErr = "Only letters are allowed"; 
+		}
         if (empty($_POST["firstname"])) {
 			$firstErr = "Firstname is required";
+		}
+        if (!preg_match("/^[A-Za-z åäöÅÄÖ ´`-]*$/",$lastname)) {
+			$lastErr = "Only letters are allowed"; 
 		}
         if (empty($_POST["lastname"])) {
 			$lastErr = "Lastname is required";
@@ -58,9 +64,15 @@ if(isset($_POST["submit"])){
 	    if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
 	    }
+        if (!preg_match("/^[A-Za-z0-9]*$/",$username)) {
+			$userErr = "Only letters and numbers are allowed"; 
+		}
         if (empty($_POST["username"])) {
 			$userErr = "Username is required";
 	    }
+        if (!preg_match("/^[A-Za-z0-9]*$/",$password)) {
+			$passErr = "Only letters and numbers are allowed"; 
+		}
 	    if (empty($_POST["password"])) {
 			$passErr = "Password is required";
 	    }
