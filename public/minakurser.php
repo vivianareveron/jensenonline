@@ -67,13 +67,13 @@ $title = $_SESSION['title'];
 
                     <div class="shortcuts">
                         <div> 
-                            <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Lägg till kurs</span> </a>
+                            <a href="minakurser_signup.php" class="shortcut"><i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Lägg till kurs</span> </a>
                         </div>
                         <div>    
-                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Redigera kurs</span> </a>
+                        <a href="minakurser_search.php" class="shortcut"><i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Redigera kurs</span> </a>
                         </div>
                         <div>
-                        <a href="searchcourse.php" class="shortcut"><i class="shortcut-icon icon-remove"></i> <span class="shortcut-label">Radera kurs</span> </a>
+                        <a href="minakurser_search.php" class="shortcut"><i class="shortcut-icon icon-remove"></i> <span class="shortcut-label">Radera kurs</span> </a>
                         </div>
 
                 </div>

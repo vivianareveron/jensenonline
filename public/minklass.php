@@ -65,13 +65,13 @@ $title = $_SESSION['title'];
 
                     <div class="shortcuts">
                         <div> 
-                            <a href="signup.php" class="shortcut"><i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Lägg till användare</span> </a>
+                            <a href="minklass_signup.php" class="shortcut"><i class="shortcut-icon icon-plus"></i><span class="shortcut-label">Lägg till användare</span> </a>
                         </div>
                         <div>    
-                        <a href="searchclass.php" class="shortcut"><i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Redigera användare</span> </a>
+                        <a href="minklass_search.php" class="shortcut"><i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Redigera användare</span> </a>
                         </div>
                         <div>
-                        <a href="searchclass.php" class="shortcut"><i class="shortcut-icon icon-remove"></i> <span class="shortcut-label">Radera användare</span> </a>
+                        <a href="minklass_search.php" class="shortcut"><i class="shortcut-icon icon-remove"></i> <span class="shortcut-label">Radera användare</span> </a>
                         </div>
 
                 </div>

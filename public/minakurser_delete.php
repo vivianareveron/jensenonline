@@ -68,7 +68,7 @@
         
             if ($result) {
                 echo "Course deleted";
-                header("Location: minakurser_delete.php?deleted=true");
+                header("Location: minakurser.php?deleted=true");
 
         }else {
              echo "Delete failed! <br /><br />";
