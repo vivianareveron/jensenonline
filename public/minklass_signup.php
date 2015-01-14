@@ -14,9 +14,9 @@
     <div class="main">
     <div class="account-container">
         <div class="content clearfix">
-        <h1>Lägg till kurser</h1>
-    <p>Lägg till kurser i Jensen Online. </p>
-    <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i><br /><br />
+        <h1>Lägg till användare</h1>
+    <p>Lägg till användare i Jensen Online. </p>
+    <i>Fält markerade med en <span class="error">*</span> är obligatoriska.</i>
 
 <?php
     $title = $class = $firstname = $lastname = $address = $postnumber = $postaddress = $email = $phone = $mobile = $username = $password = $re_password = "" ;
@@ -178,7 +178,7 @@ if(isset($_POST["submit"])){
 ?>
             
 <!-- Formulär --> 
-<form action="signup.php" method="POST" >
+<form action="minklass_signup.php" method="POST" >
         <table>
             <tr>
                 <th><label for="title">Titel: </label></th>
