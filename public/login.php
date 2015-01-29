@@ -141,7 +141,7 @@ if(isset($_POST["submit"])) {
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; 2014 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <div class="span12"> &copy; 2014 - Viviana & Marie </div>
         <!-- /span12 --> 
       </div>
       <!-- /row --> 
